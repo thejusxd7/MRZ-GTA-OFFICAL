@@ -267,10 +267,10 @@ export default function App() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-6xl md:text-8xl font-bold amber-text-glow leading-tight tracking-tight flex flex-col items-center"
+            className="text-6xl md:text-8xl font-bold leading-tight tracking-tight flex flex-col items-center"
           >
-            <span>MRZ</span>
-            <span className="text-amber-400/20 border-b-4 border-amber-400/20">GTA OFFICAL</span>
+            <span className="text-amber-400 amber-text-glow">MRZ</span>
+            <span className="text-white border-b-4 border-white/60 mt-2 whitespace-nowrap">GTA OFFICAL</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0 }}
