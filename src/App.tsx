@@ -180,6 +180,15 @@ const SocialLink: React.FC<{ icon: React.ReactNode, label: string, href?: string
 const BackgroundDecorations = () => {
   return (
     <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+      {/* Blurred Background Image */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center brightness-[0.3]"
+        style={{
+          backgroundImage: 'url("https://cdn.discordapp.com/attachments/1504848109484638401/1504874595939913768/1778852768140.png?ex=6a08932e&is=6a0741ae&hm=64bb35eacc7ddead08cc20e49898668d8f0e29d8392cd9e2a0e0154cfee0f060&")',
+          filter: 'blur(20px)',
+          transform: 'scale(1.1)',
+        }}
+      />
       <motion.div
         animate={{
           x: [0, 100, 0],
