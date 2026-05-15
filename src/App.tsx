@@ -1,0 +1,268 @@
+import React from 'react';
+import { motion } from 'motion/react';
+import { 
+  Instagram, 
+  MessageCircle, 
+  Disc, 
+  ExternalLink,
+  ChevronRight,
+  Sparkles
+} from 'lucide-react';
+import { cn } from './lib/utils';
+
+interface SocialLinks {
+  discord?: string;
+  whatsapp?: string;
+  instagram?: string;
+}
+
+interface Profile {
+  id: string;
+  name: string;
+  bio: string;
+  avatar: string;
+  links: SocialLinks;
+}
+
+const PROFILES: Profile[] = [
+  {
+    id: '1',
+    name: 'Alex Rivera',
+    bio: 'Digital nomad & creative designer. obsessed with minimalist aesthetics and liquid interfaces.',
+    avatar: 'https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&q=80&w=200&h=200',
+    links: {
+      discord: 'https://discord.com',
+      whatsapp: 'https://whatsapp.com',
+      instagram: 'https://instagram.com'
+    }
+  },
+  {
+    id: '2',
+    name: 'Sarah Chen',
+    bio: 'Software engineer building the future of decentralized web. Coffee enthusiast.',
+    avatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=200&h=200',
+    links: {
+      discord: 'https://discord.com',
+      whatsapp: 'https://whatsapp.com',
+      instagram: 'https://instagram.com'
+    }
+  },
+  {
+    id: '3',
+    name: 'Marcus Thorne',
+    bio: 'Music producer based in Berlin. Exploring the intersection of sound and light.',
+    avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=200&h=200',
+    links: {
+      discord: 'https://discord.com',
+      whatsapp: 'https://whatsapp.com',
+      instagram: 'https://instagram.com'
+    }
+  }
+];
+
+const GlassCard: React.FC<{ profile: Profile }> = ({ profile }) => {
+  return (
+    <motion.div
+      layout
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      whileHover={{ y: -5, scale: 1.02 }}
+      transition={{ duration: 0.4, ease: "easeOut" }}
+      className="liquid-glass amber-glow relative overflow-hidden rounded-[2.5rem] p-8 md:p-10 transition-all group"
+      id={`profile-${profile.id}`}
+    >
+      {/* Liquid background decorative element */}
+      <div className="absolute -top-12 -right-12 w-32 h-32 bg-amber-400/20 blur-[50px] rounded-full group-hover:bg-amber-400/30 transition-colors duration-500" />
+      <div className="absolute -bottom-12 -left-12 w-32 h-32 bg-amber-600/10 blur-[50px] rounded-full group-hover:bg-amber-600/20 transition-colors duration-500" />
+
+      <div className="flex flex-col md:flex-row gap-8 items-center md:items-start relative z-10">
+        {/* Profile Picture */}
+        <div className="relative">
+          <motion.div 
+            whileHover={{ scale: 1.1, rotate: 5 }}
+            className="w-32 h-32 md:w-40 md:h-40 rounded-[2rem] overflow-hidden border-2 border-amber-400/30 shadow-lg"
+          >
+            <img 
+              src={profile.avatar} 
+              alt={profile.name}
+              className="w-full h-full object-cover"
+              referrerPolicy="no-referrer"
+            />
+          </motion.div>
+          <div className="absolute -bottom-2 -right-2 bg-amber-400 text-black p-2 rounded-xl shadow-lg">
+            <Sparkles size={16} />
+          </div>
+        </div>
+
+        {/* Content */}
+        <div className="flex-1 text-center md:text-left">
+          <h2 className="text-3xl md:text-4xl font-bold mb-3 amber-text-glow text-amber-50">
+            {profile.name}
+          </h2>
+          <p className="text-amber-100/70 leading-relaxed max-w-lg mb-8 text-lg">
+            {profile.bio}
+          </p>
+
+          {/* Links */}
+          <div className="flex flex-wrap items-center justify-center md:justify-start gap-4">
+            <SocialLink 
+              icon={<Disc size={20} />} 
+              label="Discord" 
+              href={profile.links.discord} 
+              color="bg-[#5865F2]"
+            />
+            <SocialLink 
+              icon={<MessageCircle size={20} />} 
+              label="WhatsApp" 
+              href={profile.links.whatsapp} 
+              color="bg-[#25D366]"
+            />
+            <SocialLink 
+              icon={<Instagram size={20} />} 
+              label="Instagram" 
+              href={profile.links.instagram} 
+              color="bg-gradient-to-tr from-[#f9ce34] via-[#ee2a7b] to-[#6228d7]"
+            />
+          </div>
+        </div>
+
+        {/* Actions */}
+        <div className="hidden md:flex flex-col gap-2">
+          <motion.button 
+            whileHover={{ x: 5 }}
+            className="p-4 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors"
+          >
+            <ExternalLink size={20} className="text-amber-400" />
+          </motion.button>
+          <motion.button 
+            whileHover={{ x: 5 }}
+            className="p-4 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors"
+          >
+            <ChevronRight size={20} className="text-amber-400" />
+          </motion.button>
+        </div>
+      </div>
+    </motion.div>
+  );
+};
+
+const SocialLink: React.FC<{ icon: React.ReactNode, label: string, href?: string, color: string }> = ({ icon, label, href, color }) => {
+  if (!href) return null;
+  
+  return (
+    <motion.a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      whileHover={{ y: -3, scale: 1.05 }}
+      whileTap={{ scale: 0.95 }}
+      className="flex items-center gap-3 px-6 py-3 rounded-2xl liquid-glass group overflow-hidden relative"
+    >
+      <div className={cn("absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-300", color)} />
+      <span className="text-amber-400 group-hover:text-amber-300 transition-colors relative z-10">{icon}</span>
+      <span className="font-medium text-amber-50/90 group-hover:text-white transition-colors relative z-10">{label}</span>
+    </motion.a>
+  );
+};
+
+const BackgroundDecorations = () => {
+  return (
+    <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+      <motion.div
+        animate={{
+          x: [0, 100, 0],
+          y: [0, 50, 0],
+          scale: [1, 1.2, 1],
+        }}
+        transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+        className="absolute top-[10%] left-[20%] w-[500px] h-[500px] bg-amber-500/10 blur-[120px] rounded-full"
+      />
+      <motion.div
+        animate={{
+          x: [0, -100, 0],
+          y: [0, -80, 0],
+          scale: [1, 1.3, 1],
+        }}
+        transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
+        className="absolute bottom-[20%] right-[10%] w-[600px] h-[600px] bg-amber-600/5 blur-[150px] rounded-full"
+      />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full opacity-30">
+        <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_center,rgba(251,191,36,0.05)_0%,transparent_70%)]" />
+      </div>
+    </div>
+  );
+};
+
+export default function App() {
+  return (
+    <main className="relative min-h-screen p-6 md:p-12 lg:p-24 flex flex-col items-center">
+      <BackgroundDecorations />
+
+      <div className="relative z-10 w-full max-w-5xl space-y-12">
+        {/* Header */}
+        <header className="text-center space-y-4 mb-20">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8 }}
+            className="inline-block"
+          >
+            {/* Video Logo Container */}
+            <div className="relative mb-8 group">
+              <div className="absolute inset-0 bg-amber-400/30 blur-2xl rounded-full opacity-50 group-hover:opacity-80 transition-opacity" />
+              <div className="relative w-24 h-24 md:w-32 md:h-32 mx-auto rounded-3xl overflow-hidden liquid-glass border-2 border-amber-400/30 shadow-2xl">
+                <video 
+                  src="https://media.discordapp.net/attachments/1498733928263975113/1504845763916595312/InShot_20260515_191814463.mp4?ex=6a087854&is=6a0726d4&hm=a5aa207dcad89516a7c1db2cb57ef16afc7876beac88e529e55d002a17279a5d&"
+                  className="w-full h-full object-cover"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                />
+              </div>
+            </div>
+          </motion.div>
+          <motion.h1 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="text-6xl md:text-8xl font-bold amber-text-glow leading-none tracking-tight"
+          >
+            MRZ <span className="text-amber-400/20 border-b-4 border-amber-400/20">GTA OFFICAL</span>
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 0.5 }}
+            className="text-amber-100/40 text-lg max-w-xl mx-auto"
+          >
+            A curated showcase of creative minds connected through the digital amber lens.
+          </motion.p>
+        </header>
+
+        {/* Profile List */}
+        <section className="grid gap-12">
+          {PROFILES.map((profile, index) => (
+            <GlassCard key={profile.id} profile={profile} />
+          ))}
+        </section>
+
+        {/* Footer */}
+        <footer className="pt-24 pb-12 text-center">
+          <motion.div 
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            className="flex flex-col items-center gap-6"
+          >
+            <div className="w-12 h-12 rounded-full border border-amber-400/30 flex items-center justify-center text-amber-400 group cursor-pointer hover:bg-amber-400 hover:text-black transition-all">
+              <ChevronRight className="rotate-90" />
+            </div>
+            <p className="text-amber-100/20 text-sm tracking-widest uppercase">
+              &copy; 2026 Amber Glass Hub &bull; Refracted in Digital
+            </p>
+          </motion.div>
+        </footer>
+      </div>
+    </main>
+  );
+}
