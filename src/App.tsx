@@ -76,6 +76,30 @@ const PROFILES: Profile[] = [
       youtube: 'https://youtube.com/@mackgaminglive?si=PBkpGINxwikHphOg',
       kick: 'https://kick.com/mack_gaming'
     }
+  },
+  {
+    id: '5',
+    name: 'MRZ Appappan',
+    bio: 'Member',
+    avatar: 'https://cdn.discordapp.com/attachments/1504849417235333171/1504966924797214790/9d0eee497b42106a43b6a814b29505f2.png?ex=6a08e92b&is=6a0797ab&hm=2c9d4d74e7a8e9be9f638e6ec717907a0ef8c909413d0e29d29469097ff816a5&',
+    links: { 
+      discord: 'https://discord.gg/6DR4DMGDwm', 
+      whatsapp: 'https://chat.whatsapp.com/HkImfLAPZ6gJyJgolputye', 
+      instagram: 'https://www.instagram.com/mrz.appappan?igsh=dDRmbHRqZnVubzRt', 
+      youtube: 'https://youtube.com/@mrzappappan'
+    }
+  },
+  {
+    id: '6',
+    name: 'MRZ Raju Bahi',
+    bio: 'Member',
+    avatar: 'https://cdn.discordapp.com/attachments/1504849417235333171/1504863710882037913/channels4_profile_11.jpg?ex=6a08890b&is=6a07378b&hm=31e23092db2deac9697d707bab173ce34878251a3563332dde40cbc2dbe4502c&',
+    links: { 
+      discord: 'https://discord.gg/Fpx2uWRZ6', 
+      instagram: 'https://www.instagram.com/og_rajubhai?igsh=emJzeG56bHVzZzRo', 
+      youtube: 'https://youtube.com/@mrzrajubhai?si=G6jno-rn60iZaKw9',
+      kick: 'https://kick.com/mrzrajubhai'
+    }
   }
 ];
 
