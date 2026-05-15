@@ -243,9 +243,9 @@ export default function App() {
     <main className="relative min-h-screen p-6 md:p-12 lg:p-24 flex flex-col items-center">
       <BackgroundDecorations />
 
-      <div className="relative z-10 w-full max-w-5xl space-y-12">
+      <div className="relative z-10 w-full max-w-7xl space-y-12">
         {/* Banner and Logo Section */}
-        <div className="relative mb-24">
+        <div className="relative mb-24 max-w-5xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -307,7 +307,7 @@ export default function App() {
         </header>
 
         {/* Profile List */}
-        <section className="grid gap-12">
+        <section className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10">
           {PROFILES.map((profile, index) => (
             <GlassCard key={profile.id} profile={profile} />
           ))}
