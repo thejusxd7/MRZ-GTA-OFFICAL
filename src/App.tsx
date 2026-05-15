@@ -3,10 +3,12 @@ import { motion } from 'motion/react';
 import { 
   Instagram, 
   MessageCircle, 
-  Disc, 
-  ExternalLink,
   ChevronRight,
-  Sparkles
+  Sparkles,
+  Youtube,
+  ExternalLink,
+  Gamepad2,
+  MonitorPlay
 } from 'lucide-react';
 import { cn } from './lib/utils';
 
@@ -14,6 +16,8 @@ interface SocialLinks {
   discord?: string;
   whatsapp?: string;
   instagram?: string;
+  youtube?: string;
+  kick?: string;
 }
 
 interface Profile {
@@ -27,35 +31,50 @@ interface Profile {
 const PROFILES: Profile[] = [
   {
     id: '1',
-    name: 'Alex Rivera',
-    bio: 'Digital nomad & creative designer. obsessed with minimalist aesthetics and liquid interfaces.',
-    avatar: 'https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&q=80&w=200&h=200',
-    links: {
-      discord: 'https://discord.com',
-      whatsapp: 'https://whatsapp.com',
-      instagram: 'https://instagram.com'
+    name: 'MRZ Thoppi',
+    bio: 'The God Father',
+    avatar: 'https://cdn.discordapp.com/attachments/1504849417235333171/1504849588429914413/1778854387814.jpg?ex=6a087be4&is=6a072a64&hm=cc6fa5b2c07548771a9708166f013d76adecb26cae5694843260f18c26c82793&',
+    links: { 
+      discord: 'https://discord.gg/mrz-thoppi-1080457490849857580',
+      instagram: 'https://www.instagram.com/mrz_thoppi?igsh=ZTZlN3pieTl3c3U1',
+      youtube: 'https://youtube.com/@mrzthoppi?si=9VzF59MXYH6ICZqM'
     }
   },
   {
     id: '2',
-    name: 'Sarah Chen',
-    bio: 'Software engineer building the future of decentralized web. Coffee enthusiast.',
-    avatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=200&h=200',
-    links: {
-      discord: 'https://discord.com',
-      whatsapp: 'https://whatsapp.com',
-      instagram: 'https://instagram.com'
+    name: 'MRZ Rambo',
+    bio: 'The Leader',
+    avatar: 'https://cdn.discordapp.com/attachments/1504849417235333171/1504861015001792583/channels4_profile_7.jpg?ex=6a088688&is=6a073508&hm=712306081593ffd0925b3d0d0bb709783f450c3a4d16301880089d3f9b6f01a0&',
+    links: { 
+      discord: 'https://discord.gg/mCJs57VpK', 
+      instagram: 'https://www.instagram.com/mrz__rambo?igsh=ZGtxNXdkaWNma2g3', 
+      youtube: 'https://youtube.com/@mrzrambo4'
     }
   },
   {
     id: '3',
-    name: 'Marcus Thorne',
-    bio: 'Music producer based in Berlin. Exploring the intersection of sound and light.',
-    avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=200&h=200',
-    links: {
-      discord: 'https://discord.com',
-      whatsapp: 'https://whatsapp.com',
-      instagram: 'https://instagram.com'
+    name: 'MRZ Sheikh',
+    bio: 'The Co-Leader',
+    avatar: 'https://cdn.discordapp.com/attachments/1504849417235333171/1504859030668050625/1778856722595.jpg?ex=6a0884af&is=6a07332f&hm=b84358267ca8696e7e43a6113ad5a31833e46d46642a804b0752a2857f3408f1&',
+    links: { 
+      discord: 'https://discord.gg/sheikhh', 
+      whatsapp: 'https://sheikh-gaming.vercel.app/', 
+      instagram: 'https://www.instagram.com/_sheikh.official_?igsh=MThmeTloZmE1Nmprbg==', 
+      youtube: 'https://youtube.com/@sheikhgaming_op?si=p8Ag7Y-b-W5Zc33C',
+      kick: 'https://kick.com/sheikh_nuhman'
+    }
+  },
+  {
+    id: '4',
+    name: 'MRZ Mack',
+    bio: 'The Co-Leader',
+    avatar: 'https://cdn.discordapp.com/attachments/1504849417235333171/1504862876266135613/channels4_profile_1.jpg?ex=6a088844&is=6a0736c4&hm=de93831c5751c5128c5c8a8d78e4b57b4e26acd03bcf353ba035e2e90cdfee6d&',
+    links: { 
+      discord: 'https://discord.gg/Tt7aNkbh', 
+      whatsapp: 'https://chat.whatsapp.com/Ht1Y2yT3VFL7n7QRxfv8HW', 
+      instagram: 'https://www.instagram.com/mrz_mackk?igsh=MTBkbzA4M3pucGNqMg==', 
+      youtube: 'https://youtube.com/@mackgaminglive?si=PBkpGINxwikHphOg',
+      kick: 'https://kick.com/mack_gaming'
     }
   }
 ];
@@ -89,9 +108,6 @@ const GlassCard: React.FC<{ profile: Profile }> = ({ profile }) => {
               referrerPolicy="no-referrer"
             />
           </motion.div>
-          <div className="absolute -bottom-2 -right-2 bg-amber-400 text-black p-2 rounded-xl shadow-lg">
-            <Sparkles size={16} />
-          </div>
         </div>
 
         {/* Content */}
@@ -106,7 +122,7 @@ const GlassCard: React.FC<{ profile: Profile }> = ({ profile }) => {
           {/* Links */}
           <div className="flex flex-wrap items-center justify-center md:justify-start gap-4">
             <SocialLink 
-              icon={<Disc size={20} />} 
+              icon={<Gamepad2 size={20} />} 
               label="Discord" 
               href={profile.links.discord} 
               color="bg-[#5865F2]"
@@ -123,23 +139,19 @@ const GlassCard: React.FC<{ profile: Profile }> = ({ profile }) => {
               href={profile.links.instagram} 
               color="bg-gradient-to-tr from-[#f9ce34] via-[#ee2a7b] to-[#6228d7]"
             />
+            <SocialLink 
+              icon={<Youtube size={20} />} 
+              label="YouTube" 
+              href={profile.links.youtube} 
+              color="bg-[#FF0000]"
+            />
+            <SocialLink 
+              icon={<MonitorPlay size={20} />} 
+              label="Kick" 
+              href={profile.links.kick} 
+              color="bg-[#53FC18]"
+            />
           </div>
-        </div>
-
-        {/* Actions */}
-        <div className="hidden md:flex flex-col gap-2">
-          <motion.button 
-            whileHover={{ x: 5 }}
-            className="p-4 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors"
-          >
-            <ExternalLink size={20} className="text-amber-400" />
-          </motion.button>
-          <motion.button 
-            whileHover={{ x: 5 }}
-            className="p-4 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors"
-          >
-            <ChevronRight size={20} className="text-amber-400" />
-          </motion.button>
         </div>
       </div>
     </motion.div>
@@ -199,36 +211,56 @@ export default function App() {
       <BackgroundDecorations />
 
       <div className="relative z-10 w-full max-w-5xl space-y-12">
+        {/* Banner and Logo Section */}
+        <div className="relative mb-24">
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1 }}
+            className="w-full aspect-[174/67] rounded-[2.5rem] overflow-hidden liquid-glass border-2 border-amber-400/30 shadow-2xl relative z-10"
+          >
+            <img 
+              src="https://cdn.discordapp.com/attachments/1504848109484638401/1504848321502642310/IMG_20260515_193701.jpg?ex=6a087ab6&is=6a072936&hm=f1a3a2e59562849ce425b6ba5d17781e2a9433a82c6d36fef6934d9b1578333a&" 
+              alt="MRZ Banner"
+              className="w-full h-full object-cover"
+              referrerPolicy="no-referrer"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a05] via-transparent to-transparent opacity-60" />
+          </motion.div>
+
+          {/* Logo - Layered on bottom of banner */}
+          <div className="absolute left-1/2 -translate-x-1/2 -bottom-16 z-20">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+            >
+              <div className="relative group">
+                <div className="absolute inset-0 bg-amber-400/30 blur-2xl rounded-full opacity-50 group-hover:opacity-80 transition-opacity" />
+                <div className="relative w-24 h-24 md:w-32 md:h-32 mx-auto rounded-3xl overflow-hidden liquid-glass border-2 border-amber-400/30 shadow-2xl">
+                  <video 
+                    src="https://media.discordapp.net/attachments/1498733928263975113/1504845763916595312/InShot_20260515_191814463.mp4?ex=6a087854&is=6a0726d4&hm=a5aa207dcad89516a7c1db2cb57ef16afc7876beac88e529e55d002a17279a5d&"
+                    className="w-full h-full object-cover"
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                  />
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+
         {/* Header */}
         <header className="text-center space-y-4 mb-20">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8 }}
-            className="inline-block"
-          >
-            {/* Video Logo Container */}
-            <div className="relative mb-8 group">
-              <div className="absolute inset-0 bg-amber-400/30 blur-2xl rounded-full opacity-50 group-hover:opacity-80 transition-opacity" />
-              <div className="relative w-24 h-24 md:w-32 md:h-32 mx-auto rounded-3xl overflow-hidden liquid-glass border-2 border-amber-400/30 shadow-2xl">
-                <video 
-                  src="https://media.discordapp.net/attachments/1498733928263975113/1504845763916595312/InShot_20260515_191814463.mp4?ex=6a087854&is=6a0726d4&hm=a5aa207dcad89516a7c1db2cb57ef16afc7876beac88e529e55d002a17279a5d&"
-                  className="w-full h-full object-cover"
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                />
-              </div>
-            </div>
-          </motion.div>
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-6xl md:text-8xl font-bold amber-text-glow leading-none tracking-tight"
+            className="text-6xl md:text-8xl font-bold amber-text-glow leading-tight tracking-tight flex flex-col items-center"
           >
-            MRZ <span className="text-amber-400/20 border-b-4 border-amber-400/20">GTA OFFICAL</span>
+            <span className="text-amber-400/20 border-b-4 border-amber-400/20 uppercase">MRZ GTA OFFICAL 💛</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0 }}
@@ -236,7 +268,7 @@ export default function App() {
             transition={{ duration: 1, delay: 0.5 }}
             className="text-amber-100/40 text-lg max-w-xl mx-auto"
           >
-            A curated showcase of creative minds connected through the digital amber lens.
+            MRZ - It's a gang founded by MRZ Thoppi in FiveM GTA Roleplay, Here you can find the each members social profiles who is in this gang.
           </motion.p>
         </header>
 
@@ -258,7 +290,7 @@ export default function App() {
               <ChevronRight className="rotate-90" />
             </div>
             <p className="text-amber-100/20 text-sm tracking-widest uppercase">
-              &copy; 2026 Amber Glass Hub &bull; Refracted in Digital
+              &copy; MRZ Offical 2026 &bull; All Rights Reserved 
             </p>
           </motion.div>
         </footer>
