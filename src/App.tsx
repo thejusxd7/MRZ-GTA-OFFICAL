@@ -239,7 +239,7 @@ export default function App() {
                 <div className="absolute inset-0 bg-amber-400/30 blur-2xl rounded-full opacity-50 group-hover:opacity-80 transition-opacity" />
                 <div className="relative w-24 h-24 md:w-32 md:h-32 mx-auto rounded-3xl overflow-hidden liquid-glass border-2 border-amber-400/30 shadow-2xl">
                   <video 
-                    src="https://media.discordapp.net/attachments/1498733928263975113/1504845763916595312/InShot_20260515_191814463.mp4?ex=6a087854&is=6a0726d4&hm=a5aa207dcad89516a7c1db2cb57ef16afc7876beac88e529e55d002a17279a5d&"
+                    src="https://media.discordapp.net/attachments/1504848109484638401/1504848291353858068/InShot_20260515_192201274.mp4?ex=6a087aaf&is=6a07292f&hm=3bbf660f1af5f1e2827ebb6fdbd1023be92357276de6d7b5dd8cafe9932a0f4d&"
                     className="w-full h-full object-cover"
                     autoPlay
                     loop
@@ -260,13 +260,14 @@ export default function App() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-6xl md:text-8xl font-bold amber-text-glow leading-tight tracking-tight flex flex-col items-center"
           >
-            <span className="text-amber-400/20 border-b-4 border-amber-400/20 uppercase">MRZ GTA OFFICAL 💛</span>
+            <span>MRZ</span>
+            <span className="text-amber-400/20 border-b-4 border-amber-400/20">GTA OFFICAL</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.5 }}
-            className="text-amber-100/40 text-lg max-w-xl mx-auto"
+            className="text-amber-100/40 text-lg md:text-xl max-w-3xl mx-auto font-light"
           >
             MRZ - It's a gang founded by MRZ Thoppi in FiveM GTA Roleplay, Here you can find the each members social profiles who is in this gang.
           </motion.p>
