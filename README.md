@@ -1,20 +1,14 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+Mrz Gta Offical Webpage 
+Developed By : Ark
 
-# Run and deploy your AI Studio app
+Credits :
+Ark Graphics 
+Mystic OP
+Smoky - D - Brook
 
-This contains everything you need to run your app locally.
+Other Helpers :
+Egosit Nagi
+Sui Nyx
 
-View your app in AI Studio: https://ai.studio/apps/f4ff7321-0e7f-4058-be95-fb471d16c622
-
-## Run Locally
-
-**Prerequisites:**  Node.js
-
-
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+Contributors :
+Mrz Fam
