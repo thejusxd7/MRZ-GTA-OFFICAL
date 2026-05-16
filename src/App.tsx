@@ -52,6 +52,19 @@ const PROFILES: Profile[] = [
     }
   },
   {
+    id: '8',
+    name: 'MRZ Shameer',
+    bio: 'Member',
+    avatar: 'https://cdn.discordapp.com/attachments/1504849417235333171/1505158599641403462/1778928129294.jpg?ex=6a099bae&is=6a084a2e&hm=8acae1770497748d6aeef32a733a14e105dd82927878879b50ed82a509b20e38&',
+    links: { 
+      discord: 'https://discord.gg/Sv92FdBxg', 
+      whatsapp: 'https://chat.whatsapp.com/BasKk5v12AxEd6Gl2cwDy4?mlu=0&s=cl&p=a', 
+      instagram: 'https://www.instagram.com/mrz_shameer?igsh=MWlseTlsdXY3eDJ0cw==', 
+      youtube: 'https://youtube.com/@mrzshameer',
+      kick: 'https://kick.com/mrzshameerog'
+    }
+  },
+  {
     id: '3',
     name: 'MRZ Sheikh',
     bio: 'The Co-Leader',
@@ -99,6 +112,17 @@ const PROFILES: Profile[] = [
       instagram: 'https://www.instagram.com/og_rajubhai?igsh=emJzeG56bHVzZzRo', 
       youtube: 'https://youtube.com/@mrzrajubhai?si=G6jno-rn60iZaKw9',
       kick: 'https://kick.com/mrzrajubhai'
+    }
+  },
+  {
+    id: '7',
+    name: 'MRZ Kurup Denny',
+    bio: 'Member',
+    avatar: 'https://cdn.discordapp.com/attachments/1504849417235333171/1504865621081591839/20260508_223329.jpg?ex=6a093393&is=6a07e213&hm=2b1c6f48092babb6e186be87c90c4494309838355ea089c4b086a917c2665b03&',
+    links: { 
+      discord: 'https://discord.gg/qhYeUBt6sY', 
+      instagram: 'https://www.instagram.com/kurupdenny?igsh=bXE3bXh2MXV1MmRs', 
+      youtube: 'https://youtube.com/@kurupdenny'
     }
   }
 ];
@@ -307,7 +331,7 @@ export default function App() {
         </header>
 
         {/* Profile List */}
-        <section className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10">
+        <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
           {PROFILES.map((profile, index) => (
             <GlassCard key={profile.id} profile={profile} />
           ))}
