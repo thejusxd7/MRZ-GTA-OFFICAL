@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { motion } from 'motion/react';
 import { 
   Instagram, 
@@ -127,6 +127,30 @@ const PROFILES: Profile[] = [
   }
 ];
 
+const logToDiscord = async (message: string, color?: number, label?: string) => {
+  try {
+    await fetch('/api/log-interaction', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ message, color, label }),
+    });
+  } catch (err) {
+    console.error('Failed to log to Discord:', err);
+  }
+};
+
+const sendHeartbeat = async (clientId: string) => {
+  try {
+    await fetch('/api/heartbeat', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ clientId }),
+    });
+  } catch (err) {
+    // Silent fail for heartbeat
+  }
+};
+
 const GlassCard: React.FC<{ profile: Profile }> = ({ profile }) => {
   return (
     <motion.div
@@ -219,6 +243,17 @@ const SocialLink: React.FC<{ icon: React.ReactNode, label: string, href?: string
       href={href}
       target="_blank"
       rel="noopener noreferrer"
+    onClick={() => {
+      let embedColor = 16500516; // Default Amber (0xFBBF24)
+      const labelLower = label.toLowerCase();
+      if (labelLower.includes('youtube')) embedColor = 16711680; // Red (0xFF0000)
+      else if (labelLower.includes('instagram')) embedColor = 16761035; // Pink (0xFFC0CB)
+      else if (labelLower.includes('whatsapp')) embedColor = 25600; // Dark Green (0x006400)
+      else if (labelLower.includes('kick')) embedColor = 65280; // Lime (0x00FF00)
+      else if (labelLower.includes('discord')) embedColor = 5814770; // Blurple (0x5865F2)
+
+      logToDiscord(`🚀 Someone clicked on ${label} link for ${href}`, embedColor, label);
+    }}
       whileHover={{ y: -3, scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
       className="flex items-center justify-center sm:justify-start gap-2.5 px-3 py-2.5 rounded-xl liquid-glass group overflow-hidden relative w-full"
@@ -237,7 +272,7 @@ const BackgroundDecorations = () => {
       <div 
         className="absolute inset-0 bg-cover bg-center brightness-[0.2]"
         style={{
-          backgroundImage: 'url("https://cdn.discordapp.com/attachments/1504848109484638401/1504874595939913768/1778852768140.png?ex=6a08932e&is=6a0741ae&hm=64bb35eacc7ddead08cc20e49898668d8f0e29d8392cd9e2a0e0154cfee0f060&")',
+          backgroundImage: 'url("https://cdn.discordapp.com/attachments/1504848109484638401/1504874595939913768/1778852768140.png?ex=6a093bee&is=6a07ea6e&hm=4707ecee220e57bb77e1acf699058e0de90277754b48fe8794b917f01c91f9f8&")',
           opacity: 0.4
         }}
       />
@@ -252,6 +287,27 @@ const BackgroundDecorations = () => {
 };
 
 export default function App() {
+  useEffect(() => {
+    // Generate or retrieve client ID for heartbeat
+    let clientId = sessionStorage.getItem('mrz_client_id');
+    if (!clientId) {
+      clientId = Math.random().toString(36).substring(2) + Date.now().toString(36);
+      sessionStorage.setItem('mrz_client_id', clientId);
+    }
+
+    logToDiscord("🌐 Someone just visited the MRZ Official site!", 16776960, "Page Visit"); // Yellow (0xFFFF00) for visits
+
+    // Initial heartbeat
+    sendHeartbeat(clientId);
+
+    // Setup heartbeat interval (every 30 seconds)
+    const interval = setInterval(() => {
+      if (clientId) sendHeartbeat(clientId);
+    }, 30000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <main className="relative min-h-screen p-6 md:p-12 lg:p-24 flex flex-col items-center">
       <BackgroundDecorations />
@@ -285,7 +341,7 @@ export default function App() {
                 <div className="absolute inset-0 bg-amber-400/30 blur-2xl rounded-full opacity-50 group-hover:opacity-80 transition-opacity" />
                 <div className="relative w-24 h-24 md:w-32 md:h-32 mx-auto rounded-3xl overflow-hidden liquid-glass border-2 border-amber-400/30 shadow-2xl">
                   <video 
-                    src="https://media.discordapp.net/attachments/1504848109484638401/1504848291353858068/InShot_20260515_192201274.mp4?ex=6a087aaf&is=6a07292f&hm=3bbf660f1af5f1e2827ebb6fdbd1023be92357276de6d7b5dd8cafe9932a0f4d&"
+                    src="https://media.discordapp.net/attachments/1504848109484638401/1504848291353858068/InShot_20260515_192201274.mp4?ex=6a09cc2f&is=6a087aaf&hm=9cb171934555bf2a1303465b5fe451e503b12c9da5d88bce47a5d8f8eb5e06ac&"
                     className="w-full h-full object-cover"
                     autoPlay
                     loop
