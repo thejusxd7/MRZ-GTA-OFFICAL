@@ -130,17 +130,16 @@ const PROFILES: Profile[] = [
 const GlassCard: React.FC<{ profile: Profile }> = ({ profile }) => {
   return (
     <motion.div
-      layout
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      whileHover={{ y: -5, scale: 1.02 }}
-      transition={{ duration: 0.4, ease: "easeOut" }}
-      className="liquid-glass amber-glow relative overflow-hidden rounded-[2.5rem] p-8 md:p-10 transition-all group"
+      whileHover={{ y: -5, scale: 1.01 }}
+      transition={{ duration: 0.3, ease: "easeOut" }}
+      className="liquid-glass amber-glow relative overflow-hidden rounded-[2.5rem] p-8 md:p-10 group will-change-transform"
       id={`profile-${profile.id}`}
     >
       {/* Liquid background decorative element */}
-      <div className="absolute -top-12 -right-12 w-32 h-32 bg-amber-400/20 blur-[50px] rounded-full group-hover:bg-amber-400/30 transition-colors duration-500" />
-      <div className="absolute -bottom-12 -left-12 w-32 h-32 bg-amber-600/10 blur-[50px] rounded-full group-hover:bg-amber-600/20 transition-colors duration-500" />
+      <div className="absolute -top-12 -right-12 w-32 h-32 bg-amber-400/10 blur-[30px] rounded-full group-hover:bg-amber-400/20 transition-colors duration-500" />
+      <div className="absolute -bottom-12 -left-12 w-32 h-32 bg-amber-600/5 blur-[30px] rounded-full group-hover:bg-amber-600/15 transition-colors duration-500" />
 
       <div className="flex flex-col md:flex-row gap-8 items-center md:items-start relative z-10">
         {/* Profile Picture */}
@@ -159,34 +158,16 @@ const GlassCard: React.FC<{ profile: Profile }> = ({ profile }) => {
         </div>
 
         {/* Content */}
-        <div className="flex-1 text-center md:text-left">
+        <div className="flex-1 text-center md:text-left w-full">
           <h2 className="text-3xl md:text-4xl font-bold mb-3 amber-text-glow text-amber-50">
             {profile.name}
           </h2>
-          <p className="text-amber-100/70 leading-relaxed max-w-lg mb-8 text-lg">
+          <p className="text-amber-100/70 leading-relaxed max-w-lg mb-8 text-lg mx-auto md:mx-0">
             {profile.bio}
           </p>
 
           {/* Links */}
-          <div className="flex flex-wrap items-center justify-center md:justify-start gap-4">
-            <SocialLink 
-              icon={<Gamepad2 size={20} />} 
-              label="Discord" 
-              href={profile.links.discord} 
-              color="bg-[#5865F2]"
-            />
-            <SocialLink 
-              icon={<MessageCircle size={20} />} 
-              label="WhatsApp" 
-              href={profile.links.whatsapp} 
-              color="bg-[#25D366]"
-            />
-            <SocialLink 
-              icon={<Instagram size={20} />} 
-              label="Instagram" 
-              href={profile.links.instagram} 
-              color="bg-gradient-to-tr from-[#f9ce34] via-[#ee2a7b] to-[#6228d7]"
-            />
+          <div className="grid grid-cols-2 gap-3 w-full">
             <SocialLink 
               icon={<Youtube size={20} />} 
               label="YouTube" 
@@ -198,6 +179,24 @@ const GlassCard: React.FC<{ profile: Profile }> = ({ profile }) => {
               label="Kick" 
               href={profile.links.kick} 
               color="bg-[#53FC18]"
+            />
+            <SocialLink 
+              icon={<Instagram size={20} />} 
+              label="Instagram" 
+              href={profile.links.instagram} 
+              color="bg-gradient-to-tr from-[#f9ce34] via-[#ee2a7b] to-[#6228d7]"
+            />
+            <SocialLink 
+              icon={<Gamepad2 size={20} />} 
+              label="Discord" 
+              href={profile.links.discord} 
+              color="bg-[#5865F2]"
+            />
+            <SocialLink 
+              icon={<MessageCircle size={20} />} 
+              label="WhatsApp" 
+              href={profile.links.whatsapp} 
+              color="bg-[#25D366]"
             />
           </div>
         </div>
@@ -216,11 +215,11 @@ const SocialLink: React.FC<{ icon: React.ReactNode, label: string, href?: string
       rel="noopener noreferrer"
       whileHover={{ y: -3, scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
-      className="flex items-center gap-3 px-6 py-3 rounded-2xl liquid-glass group overflow-hidden relative"
+      className="flex items-center justify-center sm:justify-start gap-2.5 px-3 py-2.5 rounded-xl liquid-glass group overflow-hidden relative w-full"
     >
       <div className={cn("absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-300", color)} />
-      <span className="text-amber-400 group-hover:text-amber-300 transition-colors relative z-10">{icon}</span>
-      <span className="font-medium text-amber-50/90 group-hover:text-white transition-colors relative z-10">{label}</span>
+      <span className="text-amber-400 group-hover:text-amber-300 transition-colors relative z-10 shrink-0">{icon}</span>
+      <span className="font-medium text-amber-50/90 group-hover:text-white transition-colors relative z-10 text-sm truncate">{label}</span>
     </motion.a>
   );
 };
@@ -230,31 +229,15 @@ const BackgroundDecorations = () => {
     <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
       {/* Blurred Background Image */}
       <div 
-        className="absolute inset-0 bg-cover bg-center brightness-[0.3]"
+        className="absolute inset-0 bg-cover bg-center brightness-[0.2]"
         style={{
           backgroundImage: 'url("https://cdn.discordapp.com/attachments/1504848109484638401/1504874595939913768/1778852768140.png?ex=6a08932e&is=6a0741ae&hm=64bb35eacc7ddead08cc20e49898668d8f0e29d8392cd9e2a0e0154cfee0f060&")',
-          filter: 'blur(20px)',
-          transform: 'scale(1.1)',
+          opacity: 0.4
         }}
       />
-      <motion.div
-        animate={{
-          x: [0, 100, 0],
-          y: [0, 50, 0],
-          scale: [1, 1.2, 1],
-        }}
-        transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-        className="absolute top-[10%] left-[20%] w-[500px] h-[500px] bg-amber-500/10 blur-[120px] rounded-full"
-      />
-      <motion.div
-        animate={{
-          x: [0, -100, 0],
-          y: [0, -80, 0],
-          scale: [1, 1.3, 1],
-        }}
-        transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
-        className="absolute bottom-[20%] right-[10%] w-[600px] h-[600px] bg-amber-600/5 blur-[150px] rounded-full"
-      />
+      {/* Background Glows */}
+      <div className="absolute top-[10%] left-[20%] w-[400px] h-[400px] bg-amber-500/10 blur-[80px] rounded-full will-change-transform" />
+      <div className="absolute bottom-[20%] right-[10%] w-[500px] h-[500px] bg-amber-600/5 blur-[100px] rounded-full will-change-transform" />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full opacity-30">
         <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_center,rgba(251,191,36,0.05)_0%,transparent_70%)]" />
       </div>

@@ -19,14 +19,13 @@
                 radial-gradient(circle at 100% 100%, #3d2b00 0%, transparent 50%),
                 radial-gradient(circle at 0% 100%, #1a1a00 0%, transparent 50%),
                 #0a0a05;
-    background-attachment: fixed;
     min-height: 100vh;
   }
 }
 
 @layer components {
   .liquid-glass {
-    @apply backdrop-blur-2xl bg-white/5 border border-white/10 shadow-2xl;
+    @apply backdrop-blur-xl bg-white/5 border border-white/10 shadow-2xl;
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
   }
   
