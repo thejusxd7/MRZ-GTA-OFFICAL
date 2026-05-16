@@ -141,12 +141,12 @@ const GlassCard: React.FC<{ profile: Profile }> = ({ profile }) => {
       <div className="absolute -top-12 -right-12 w-32 h-32 bg-amber-400/10 blur-[30px] rounded-full group-hover:bg-amber-400/20 transition-colors duration-500" />
       <div className="absolute -bottom-12 -left-12 w-32 h-32 bg-amber-600/5 blur-[30px] rounded-full group-hover:bg-amber-600/15 transition-colors duration-500" />
 
-      <div className="flex flex-col md:flex-row gap-8 items-center md:items-start relative z-10">
+      <div className="flex flex-col gap-8 items-center relative z-10">
         {/* Profile Picture */}
-        <div className="relative">
+        <div className="relative shrink-0">
           <motion.div 
             whileHover={{ scale: 1.1, rotate: 5 }}
-            className="w-32 h-32 md:w-40 md:h-40 rounded-[2rem] overflow-hidden border-2 border-amber-400/30 shadow-lg"
+            className="w-32 h-32 md:w-36 md:h-36 rounded-[2rem] overflow-hidden border-2 border-amber-400/30 shadow-lg"
           >
             <img 
               src={profile.avatar} 
@@ -158,11 +158,11 @@ const GlassCard: React.FC<{ profile: Profile }> = ({ profile }) => {
         </div>
 
         {/* Content */}
-        <div className="flex-1 text-center md:text-left w-full">
+        <div className="flex-1 text-center w-full">
           <h2 className="text-3xl md:text-4xl font-bold mb-3 amber-text-glow text-amber-50">
             {profile.name}
           </h2>
-          <p className="text-amber-100/70 leading-relaxed max-w-lg mb-8 text-lg mx-auto md:mx-0">
+          <p className="text-amber-100/70 leading-relaxed mx-auto mb-8 text-lg">
             {profile.bio}
           </p>
 
@@ -219,7 +219,7 @@ const SocialLink: React.FC<{ icon: React.ReactNode, label: string, href?: string
     >
       <div className={cn("absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-300", color)} />
       <span className="text-amber-400 group-hover:text-amber-300 transition-colors relative z-10 shrink-0">{icon}</span>
-      <span className="font-medium text-amber-50/90 group-hover:text-white transition-colors relative z-10 text-sm truncate">{label}</span>
+      <span className="font-medium text-amber-50/90 group-hover:text-white transition-colors relative z-10 text-sm whitespace-nowrap">{label}</span>
     </motion.a>
   );
 };
