@@ -197,36 +197,42 @@ const GlassCard: React.FC<{ profile: Profile }> = ({ profile }) => {
               label="YouTube" 
               href={profile.links.youtube} 
               color="bg-[#FF0000]"
+              memberName={profile.name}
             />
             <SocialLink 
               icon={<Youtube size={20} />} 
               label="YouTube 2" 
               href={profile.links.youtube2} 
               color="bg-[#FF0000]"
+              memberName={profile.name}
             />
             <SocialLink 
               icon={<MonitorPlay size={20} />} 
               label="Kick" 
               href={profile.links.kick} 
               color="bg-[#53FC18]"
+              memberName={profile.name}
             />
             <SocialLink 
               icon={<Instagram size={20} />} 
               label="Instagram" 
               href={profile.links.instagram} 
               color="bg-gradient-to-tr from-[#f9ce34] via-[#ee2a7b] to-[#6228d7]"
+              memberName={profile.name}
             />
             <SocialLink 
               icon={<Gamepad2 size={20} />} 
               label="Discord" 
               href={profile.links.discord} 
               color="bg-[#5865F2]"
+              memberName={profile.name}
             />
             <SocialLink 
               icon={<MessageCircle size={20} />} 
               label="WhatsApp" 
               href={profile.links.whatsapp} 
               color="bg-[#25D366]"
+              memberName={profile.name}
             />
           </div>
         </div>
@@ -235,7 +241,7 @@ const GlassCard: React.FC<{ profile: Profile }> = ({ profile }) => {
   );
 };
 
-const SocialLink: React.FC<{ icon: React.ReactNode, label: string, href?: string, color: string }> = ({ icon, label, href, color }) => {
+const SocialLink: React.FC<{ icon: React.ReactNode, label: string, href?: string, color: string, memberName: string }> = ({ icon, label, href, color, memberName }) => {
   if (!href) return null;
   
   return (
@@ -252,7 +258,7 @@ const SocialLink: React.FC<{ icon: React.ReactNode, label: string, href?: string
       else if (labelLower.includes('kick')) embedColor = 65280; // Lime (0x00FF00)
       else if (labelLower.includes('discord')) embedColor = 5814770; // Blurple (0x5865F2)
 
-      logToDiscord(`🚀 Someone clicked on ${label} link for ${href}`, embedColor, label);
+      logToDiscord(`🔥 Someone clicked on **${memberName}'s** ${label} link`, embedColor, `${memberName} ${label}`);
     }}
       whileHover={{ y: -3, scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
