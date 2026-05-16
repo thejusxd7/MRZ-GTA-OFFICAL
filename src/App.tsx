@@ -17,6 +17,7 @@ interface SocialLinks {
   whatsapp?: string;
   instagram?: string;
   youtube?: string;
+  youtube2?: string;
   kick?: string;
 }
 
@@ -49,19 +50,6 @@ const PROFILES: Profile[] = [
       discord: 'https://discord.gg/mCJs57VpK', 
       instagram: 'https://www.instagram.com/mrz__rambo?igsh=ZGtxNXdkaWNma2g3', 
       youtube: 'https://youtube.com/@mrzrambo4'
-    }
-  },
-  {
-    id: '8',
-    name: 'MRZ Shameer',
-    bio: 'Member',
-    avatar: 'https://cdn.discordapp.com/attachments/1504849417235333171/1505158599641403462/1778928129294.jpg?ex=6a099bae&is=6a084a2e&hm=8acae1770497748d6aeef32a733a14e105dd82927878879b50ed82a509b20e38&',
-    links: { 
-      discord: 'https://discord.gg/Sv92FdBxg', 
-      whatsapp: 'https://chat.whatsapp.com/BasKk5v12AxEd6Gl2cwDy4?mlu=0&s=cl&p=a', 
-      instagram: 'https://www.instagram.com/mrz_shameer?igsh=MWlseTlsdXY3eDJ0cw==', 
-      youtube: 'https://youtube.com/@mrzshameer',
-      kick: 'https://kick.com/mrzshameerog'
     }
   },
   {
@@ -124,6 +112,18 @@ const PROFILES: Profile[] = [
       instagram: 'https://www.instagram.com/kurupdenny?igsh=bXE3bXh2MXV1MmRs', 
       youtube: 'https://youtube.com/@kurupdenny'
     }
+  },
+  {
+    id: '9',
+    name: 'MRZ Charlie',
+    bio: 'Member',
+    avatar: 'https://cdn.discordapp.com/attachments/1504849417235333171/1505094352328720445/channels4_profile_25.jpg?ex=6a095fd8&is=6a080e58&hm=15fdd84e57c2a4ea2b8214b06889ffcaf492cb5ba268b9fb8b7f57ecb2622419&',
+    links: { 
+      discord: 'https://discord.gg/cyA3m3Gc5w', 
+      instagram: 'https://www.instagram.com/not_chxrlie.exe?igsh=MTN0NWJpOWQ0ZWV6Ng==', 
+      youtube: 'https://youtube.com/@chakkahere',
+      youtube2: 'https://youtube.com/@mrzmaari'
+    }
   }
 ];
 
@@ -172,6 +172,12 @@ const GlassCard: React.FC<{ profile: Profile }> = ({ profile }) => {
               icon={<Youtube size={20} />} 
               label="YouTube" 
               href={profile.links.youtube} 
+              color="bg-[#FF0000]"
+            />
+            <SocialLink 
+              icon={<Youtube size={20} />} 
+              label="YouTube 2" 
+              href={profile.links.youtube2} 
               color="bg-[#FF0000]"
             />
             <SocialLink 
