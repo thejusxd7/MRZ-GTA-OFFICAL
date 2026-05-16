@@ -60,19 +60,19 @@ async function startServer() {
 
   app.post("/api/log-interaction", async (req, res) => {
     const { message, color: incomingColor, label } = req.body;
-    const webhookUrl = process.env.DISCORD_WEBHOOK_URL;
+    let webhookUrl = process.env.DISCORD_WEBHOOK_URL || process.env.DISCORD_DEV_LOGS_WEBHOOK_URL;
+    const fallbackLogUrl = "https://discord.com/api/webhooks/1505224175206273094/vo1Ai_jiabY1hOBB3m-Ip9_I6Ithf_71ERh6gTLLh9DhYICsjxnbpNgarprYYHrIMvZh";
 
+    if (!webhookUrl || webhookUrl.trim() === "" || webhookUrl.length < 20) {
+      webhookUrl = fallbackLogUrl;
+    }
+    
     // Track analytics
     if (label) {
       clickAnalytics.set(label, (clickAnalytics.get(label) || 0) + 1);
     }
     
-    console.log(`[Interaction] Message: ${message}, Color: ${incomingColor}, Label: ${label}`);
-
-    if (!webhookUrl) {
-      console.warn("DISCORD_WEBHOOK_URL is not set");
-      return res.status(200).json({ success: true, message: "Webhook not set, skipping" });
-    }
+    console.log(`[Interaction Log] Message: ${message}, Label: ${label}, Target URL: ${webhookUrl.substring(0, 48)}...`);
 
     // Default to Amber if no valid color provided
     const displayColor = typeof incomingColor === 'number' ? incomingColor : 16500516;
@@ -88,12 +88,12 @@ async function startServer() {
           avatar_url: "https://cdn.discordapp.com/attachments/1504848109484638401/1504874595939913768/1778852768140.png?ex=6a093bee&is=6a07ea6e&hm=4707ecee220e57bb77e1acf699058e0de90277754b48fe8794b917f01c91f9f8&",
           embeds: [
             {
-              title: "MRZ Site Activity",
-              description: message || "New interaction on MRZ Site!",
+              title: "🚀 MRZ Site Activity",
+              description: `> ${message}` || "New interaction on MRZ Site!",
               color: displayColor,
               timestamp: new Date().toISOString(),
               footer: {
-                text: "MRZ Official Site",
+                text: "MRZ Official Site Traffic Monitor",
               },
             },
           ],
@@ -103,10 +103,12 @@ async function startServer() {
       if (response.ok) {
         res.json({ success: true });
       } else {
-        res.status(response.status).json({ error: "Failed to send to Discord" });
+        const errBody = await response.text();
+        console.error(`[Interaction Log] Discord Error (${response.status}):`, errBody);
+        res.status(response.status).json({ error: "Failed to send to Discord", details: errBody });
       }
     } catch (error) {
-      console.error("Error sending webhook:", error);
+      console.error("[Interaction Log] Fatal Fetch Error:", error);
       res.status(500).json({ error: "Internal server error" });
     }
   });
