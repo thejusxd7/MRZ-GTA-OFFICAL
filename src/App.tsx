@@ -62,7 +62,7 @@ const PROFILES: Profile[] = [
       whatsapp: 'https://sheikh-gaming.vercel.app/', 
       instagram: 'https://www.instagram.com/_sheikh.official_?igsh=MThmeTloZmE1Nmprbg==', 
       youtube: 'https://youtube.com/@sheikhgaming_op?si=p8Ag7Y-b-W5Zc33C',
-      kick: 'https://kick.com/sheikh_nuhman'
+      kick: 'https://kick.com/Sheikh_Offical'
     }
   },
   {
