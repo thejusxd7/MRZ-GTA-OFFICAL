@@ -24,7 +24,7 @@ async function startServer() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           username: "MRZ Dev Console",
-          avatar_url: "https://cdn.discordapp.com/attachments/1504848109484638401/1504874595939913768/1778852768140.png?ex=6a093bee&is=6a07ea6e&hm=4707ecee220e57bb77e1acf699058e0de90277754b48fe8794b917f01c91f9f8&",
+          avatar_url: "https://i.imgur.com/NvlQC5p.gif",
           embeds: [{
             title: `🛠️ ${title}`,
             description: message,
@@ -48,6 +48,12 @@ async function startServer() {
     } catch (err) {
       res.status(500).json({ success: false, error: err instanceof Error ? err.message : String(err) });
     }
+  });
+
+  app.post("/api/log-dev-event", async (req, res) => {
+    const { title, message, color } = req.body;
+    await sendDevLog(title || "Generic Dev Event", message || "No details provided", color);
+    res.json({ success: true });
   });
 
   app.post("/api/heartbeat", (req, res) => {
@@ -85,7 +91,7 @@ async function startServer() {
         },
         body: JSON.stringify({
           username: "MRZ Web Logs",
-          avatar_url: "https://cdn.discordapp.com/attachments/1504848109484638401/1504874595939913768/1778852768140.png?ex=6a093bee&is=6a07ea6e&hm=4707ecee220e57bb77e1acf699058e0de90277754b48fe8794b917f01c91f9f8&",
+          avatar_url: "https://i.imgur.com/NvlQC5p.gif",
           embeds: [
             {
               title: "🚀 MRZ Site Activity",
@@ -160,7 +166,7 @@ async function startServer() {
 
     const payload = {
       username: "MRZ Web Status",
-      avatar_url: "https://cdn.discordapp.com/attachments/1504848109484638401/1504874595939913768/1778852768140.png?ex=6a093bee&is=6a07ea6e&hm=4707ecee220e57bb77e1acf699058e0de90277754b48fe8794b917f01c91f9f8&",
+      avatar_url: "https://i.imgur.com/NvlQC5p.gif",
       embeds: [
         {
           title: "```💛 LIVE``` MRZ Web Status",
@@ -184,7 +190,7 @@ async function startServer() {
             }
           ],
           thumbnail: {
-            url: "https://cdn.discordapp.com/attachments/1504848109484638401/1504874595939913768/1778852768140.png?ex=6a093bee&is=6a07ea6e&hm=4707ecee220e57bb77e1acf699058e0de90277754b48fe8794b917f01c91f9f8&"
+            url: "https://i.imgur.com/NvlQC5p.gif"
           },
           image: {
             url: "https://cdn.discordapp.com/attachments/1504848109484638401/1505220219956756590/InShot_20260516_201554122.jpg?ex=6a09d512&is=6a088392&hm=a26413f93fd2a87d7a5a4c0f631954cf88bc65b51e8e7c6a2853207db7f9197b&"
@@ -192,7 +198,7 @@ async function startServer() {
           timestamp: new Date().toISOString(),
           footer: {
             text: "MRZ Management System • Auto-refreshing",
-            icon_url: "https://cdn.discordapp.com/attachments/1504848109484638401/1504874595939913768/1778852768140.png?ex=6a093bee&is=6a07ea6e&hm=4707ecee220e57bb77e1acf699058e0de90277754b48fe8794b917f01c91f9f8&"
+            icon_url: "https://i.imgur.com/NvlQC5p.gif"
           },
         }
       ],

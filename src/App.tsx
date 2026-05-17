@@ -34,7 +34,7 @@ const PROFILES: Profile[] = [
     id: '1',
     name: 'MRZ Thoppi',
     bio: 'The God Father',
-    avatar: 'https://cdn.discordapp.com/attachments/1504849417235333171/1504849588429914413/1778854387814.jpg?ex=6a087be4&is=6a072a64&hm=cc6fa5b2c07548771a9708166f013d76adecb26cae5694843260f18c26c82793&',
+    avatar: 'https://i.imgur.com/I3SAppe.jpeg',
     links: { 
       discord: 'https://discord.gg/mrz-thoppi-1080457490849857580',
       instagram: 'https://www.instagram.com/mrz_thoppi?igsh=ZTZlN3pieTl3c3U1',
@@ -45,7 +45,7 @@ const PROFILES: Profile[] = [
     id: '2',
     name: 'MRZ Rambo',
     bio: 'The Leader',
-    avatar: 'https://cdn.discordapp.com/attachments/1504849417235333171/1504861015001792583/channels4_profile_7.jpg?ex=6a088688&is=6a073508&hm=712306081593ffd0925b3d0d0bb709783f450c3a4d16301880089d3f9b6f01a0&',
+    avatar: 'https://i.imgur.com/sswXYxE.jpeg',
     links: { 
       discord: 'https://discord.gg/mCJs57VpK', 
       instagram: 'https://www.instagram.com/mrz__rambo?igsh=ZGtxNXdkaWNma2g3', 
@@ -56,7 +56,7 @@ const PROFILES: Profile[] = [
     id: '3',
     name: 'MRZ Sheikh',
     bio: 'The Co-Leader',
-    avatar: 'https://cdn.discordapp.com/attachments/1504849417235333171/1504859030668050625/1778856722595.jpg?ex=6a0884af&is=6a07332f&hm=b84358267ca8696e7e43a6113ad5a31833e46d46642a804b0752a2857f3408f1&',
+    avatar: 'https://i.imgur.com/LrKhk2j.jpeg',
     links: { 
       discord: 'https://discord.gg/sheikhh', 
       whatsapp: 'https://sheikh-gaming.vercel.app/', 
@@ -69,7 +69,7 @@ const PROFILES: Profile[] = [
     id: '4',
     name: 'MRZ Mack',
     bio: 'The Co-Leader',
-    avatar: 'https://cdn.discordapp.com/attachments/1504849417235333171/1504862876266135613/channels4_profile_1.jpg?ex=6a088844&is=6a0736c4&hm=de93831c5751c5128c5c8a8d78e4b57b4e26acd03bcf353ba035e2e90cdfee6d&',
+    avatar: 'https://i.imgur.com/HzMmpUA.jpeg',
     links: { 
       discord: 'https://discord.gg/Tt7aNkbh', 
       whatsapp: 'https://chat.whatsapp.com/Ht1Y2yT3VFL7n7QRxfv8HW', 
@@ -82,7 +82,7 @@ const PROFILES: Profile[] = [
     id: '5',
     name: 'MRZ Appappan',
     bio: 'Member',
-    avatar: 'https://cdn.discordapp.com/attachments/1504849417235333171/1504966924797214790/9d0eee497b42106a43b6a814b29505f2.png?ex=6a08e92b&is=6a0797ab&hm=2c9d4d74e7a8e9be9f638e6ec717907a0ef8c909413d0e29d29469097ff816a5&',
+    avatar: 'https://i.imgur.com/o8kiYcg.png',
     links: { 
       discord: 'https://discord.gg/6DR4DMGDwm', 
       whatsapp: 'https://chat.whatsapp.com/HkImfLAPZ6gJyJgolputye', 
@@ -94,7 +94,7 @@ const PROFILES: Profile[] = [
     id: '6',
     name: 'MRZ Raju Bahi',
     bio: 'Member',
-    avatar: 'https://cdn.discordapp.com/attachments/1504849417235333171/1504863710882037913/channels4_profile_11.jpg?ex=6a08890b&is=6a07378b&hm=31e23092db2deac9697d707bab173ce34878251a3563332dde40cbc2dbe4502c&',
+    avatar: 'https://i.imgur.com/rfmbDOZ.jpeg',
     links: { 
       discord: 'https://discord.gg/Fpx2uWRZ6', 
       instagram: 'https://www.instagram.com/og_rajubhai?igsh=emJzeG56bHVzZzRo', 
@@ -106,7 +106,7 @@ const PROFILES: Profile[] = [
     id: '7',
     name: 'MRZ Kurup Denny',
     bio: 'Member',
-    avatar: 'https://cdn.discordapp.com/attachments/1504849417235333171/1504865621081591839/20260508_223329.jpg?ex=6a093393&is=6a07e213&hm=2b1c6f48092babb6e186be87c90c4494309838355ea089c4b086a917c2665b03&',
+    avatar: 'https://i.imgur.com/H4z630d.jpeg',
     links: { 
       discord: 'https://discord.gg/qhYeUBt6sY', 
       instagram: 'https://www.instagram.com/kurupdenny?igsh=bXE3bXh2MXV1MmRs', 
@@ -117,12 +117,23 @@ const PROFILES: Profile[] = [
     id: '9',
     name: 'MRZ Charlie',
     bio: 'Member',
-    avatar: 'https://cdn.discordapp.com/attachments/1504849417235333171/1505094352328720445/channels4_profile_25.jpg?ex=6a095fd8&is=6a080e58&hm=15fdd84e57c2a4ea2b8214b06889ffcaf492cb5ba268b9fb8b7f57ecb2622419&',
+    avatar: 'https://i.imgur.com/TKkYUdi.jpeg',
     links: { 
       discord: 'https://discord.gg/cyA3m3Gc5w', 
       instagram: 'https://www.instagram.com/not_chxrlie.exe?igsh=MTN0NWJpOWQ0ZWV6Ng==', 
       youtube: 'https://youtube.com/@chakkahere',
       youtube2: 'https://youtube.com/@mrzmaari'
+    }
+  },
+  {
+    id: '10',
+    name: 'MRZ Bilal',
+    bio: 'Member',
+    avatar: 'https://i.imgur.com/0Y4Db6L.jpeg',
+    links: { 
+      discord: 'https://discord.gg/d5Zpxf8Aq', 
+      instagram: 'https://www.instagram.com/mrz_bilal_', 
+      youtube: 'https://youtube.com/@mrz_bilal'
     }
   }
 ];
@@ -136,6 +147,18 @@ const logToDiscord = async (message: string, color?: number, label?: string) => 
     });
   } catch (err) {
     console.error('Failed to log to Discord:', err);
+  }
+};
+
+const logDevEvent = async (title: string, message: string, color?: number) => {
+  try {
+    await fetch('/api/log-dev-event', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ title, message, color }),
+    });
+  } catch (err) {
+    console.error('Failed to log dev event:', err);
   }
 };
 
@@ -278,7 +301,7 @@ const BackgroundDecorations = () => {
       <div 
         className="absolute inset-0 bg-cover bg-center brightness-[0.2]"
         style={{
-          backgroundImage: 'url("https://cdn.discordapp.com/attachments/1504848109484638401/1504874595939913768/1778852768140.png?ex=6a093bee&is=6a07ea6e&hm=4707ecee220e57bb77e1acf699058e0de90277754b48fe8794b917f01c91f9f8&")',
+          backgroundImage: 'url("https://i.imgur.com/8SQwxsu.jpeg")',
           opacity: 0.4
         }}
       />
@@ -302,6 +325,19 @@ export default function App() {
     }
 
     logToDiscord("🌐 Someone just visited the MRZ Official site!", 16776960, "Page Visit"); // Yellow (0xFFFF00) for visits
+
+    // Initial Audit Log for Internal Dev Console
+    const profileCount = PROFILES.length;
+    logDevEvent(
+      "Site Deployment Audit", 
+      `### 🛠️ Active Configuration\n` +
+      `> **Profiles**: \`${profileCount}\` members listed\n` +
+      `> **Banner**: [View Image](https://i.imgur.com/hVGwHpw.jpeg)\n` +
+      `> **Main Logo**: [View GIF](https://i.imgur.com/NvlQC5p.gif)\n` +
+      `> **Background**: [View Image](https://i.imgur.com/8SQwxsu.jpeg)\n\n` +
+      `*App successfully refreshed with updated configuration.*`,
+      0x3B82F6 // Blue
+    );
 
     // Initial heartbeat
     sendHeartbeat(clientId);
@@ -328,7 +364,7 @@ export default function App() {
             className="w-full aspect-[174/67] rounded-[2.5rem] overflow-hidden liquid-glass border-2 border-amber-400/30 shadow-2xl relative z-10"
           >
             <img 
-              src="https://cdn.discordapp.com/attachments/1504848109484638401/1504848321502642310/IMG_20260515_193701.jpg?ex=6a087ab6&is=6a072936&hm=f1a3a2e59562849ce425b6ba5d17781e2a9433a82c6d36fef6934d9b1578333a&" 
+              src="https://i.imgur.com/hVGwHpw.jpeg" 
               alt="MRZ Banner"
               className="w-full h-full object-cover"
               referrerPolicy="no-referrer"
@@ -346,13 +382,11 @@ export default function App() {
               <div className="relative group">
                 <div className="absolute inset-0 bg-amber-400/30 blur-2xl rounded-full opacity-50 group-hover:opacity-80 transition-opacity" />
                 <div className="relative w-24 h-24 md:w-32 md:h-32 mx-auto rounded-3xl overflow-hidden liquid-glass border-2 border-amber-400/30 shadow-2xl">
-                  <video 
-                    src="https://media.discordapp.net/attachments/1504848109484638401/1504848291353858068/InShot_20260515_192201274.mp4?ex=6a09cc2f&is=6a087aaf&hm=9cb171934555bf2a1303465b5fe451e503b12c9da5d88bce47a5d8f8eb5e06ac&"
+                  <img 
+                    src="https://i.imgur.com/NvlQC5p.gif"
+                    alt="MRZ Logo"
                     className="w-full h-full object-cover"
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
+                    referrerPolicy="no-referrer"
                   />
                 </div>
               </div>
