@@ -10,7 +10,9 @@ import {
   Gamepad2,
   MonitorPlay,
   Search,
-  X
+  X,
+  Share2,
+  Check
 } from 'lucide-react';
 import { cn } from './lib/utils';
 
@@ -60,7 +62,7 @@ const PROFILES: Profile[] = [
     bio: 'The Co-Leader',
     avatar: 'https://i.imgur.com/LrKhk2j.jpeg',
     links: { 
-      discord: 'https://discord.gg/sheikhh', 
+      discord: 'https://discord.gg/3QSbcUcu7', 
       whatsapp: 'https://sheikh-gaming.vercel.app/', 
       instagram: 'https://www.instagram.com/_sheikh.official_?igsh=MThmeTloZmE1Nmprbg==', 
       youtube: 'https://youtube.com/@sheikhgaming_op?si=p8Ag7Y-b-W5Zc33C',
@@ -73,7 +75,7 @@ const PROFILES: Profile[] = [
     bio: 'The Co-Leader',
     avatar: 'https://i.imgur.com/HzMmpUA.jpeg',
     links: { 
-      discord: 'https://discord.gg/Tt7aNkbh', 
+      discord: 'https://discord.gg/wHAnZRqNBv', 
       whatsapp: 'https://chat.whatsapp.com/Ht1Y2yT3VFL7n7QRxfv8HW', 
       instagram: 'https://www.instagram.com/mrz_mackk?igsh=MTBkbzA4M3pucGNqMg==', 
       youtube: 'https://youtube.com/@mackgaminglive?si=PBkpGINxwikHphOg',
@@ -100,7 +102,8 @@ const PROFILES: Profile[] = [
     links: { 
       discord: 'https://discord.gg/d5Zpxf8Aq', 
       instagram: 'https://www.instagram.com/mrz_bilal_', 
-      youtube: 'https://youtube.com/@mrz_bilal'
+      youtube: 'https://youtube.com/@mrz_bilal',
+      kick: 'https://kick.com/mrz-bilal'
     }
   },
   {
@@ -123,19 +126,8 @@ const PROFILES: Profile[] = [
     links: { 
       discord: 'https://discord.gg/qhYeUBt6sY', 
       instagram: 'https://www.instagram.com/kurupdenny?igsh=bXE3bXh2MXV1MmRs', 
-      youtube: 'https://youtube.com/@kurupdenny'
-    }
-  },
-  {
-    id: '9',
-    name: 'MRZ Charlie',
-    bio: 'Member',
-    avatar: 'https://i.imgur.com/TKkYUdi.jpeg',
-    links: { 
-      discord: 'https://discord.gg/cyA3m3Gc5w', 
-      instagram: 'https://www.instagram.com/not_chxrlie.exe?igsh=MTN0NWJpOWQ0ZWV6Ng==', 
-      youtube: 'https://youtube.com/@chakkahere',
-      youtube2: 'https://youtube.com/@mrzmaari'
+      youtube: 'https://youtube.com/@kurupdenny',
+      kick: 'https://kick.com/dennygaming'
     }
   },
   {
@@ -161,6 +153,354 @@ const PROFILES: Profile[] = [
       discord: 'https://discord.gg/H3ZEW5zACv',
       whatsapp: 'https://chat.whatsapp.com/CVkkDSE0hacH1QEkgyU9gI',
       youtube: 'https://youtube.com/@alex_exe?si=9p8uz-nU0Y57VgLE'
+    }
+  },
+  {
+    id: '13',
+    name: 'MRZ Falcon',
+    bio: 'Member',
+    avatar: 'https://i.imgur.com/WzZed8n.jpeg',
+    links: { 
+      instagram: 'https://www.instagram.com/the_4alcon?igsh=MWt5cGpvYzlwaHppZQ==',
+      discord: 'https://discord.gg/Vn4ksKMTz',
+      whatsapp: 'https://chat.whatsapp.com/DjGhfkQpaZH7xHHWhLhjaj',
+      youtube: 'https://youtube.com/@mrzfalcn?si=IQlfUB1BLc4ahTW2'
+    }
+  },
+  {
+    id: '14',
+    name: 'MRZ Fluffy',
+    bio: 'Member',
+    avatar: 'https://i.imgur.com/WwYmMa7.jpeg',
+    links: { 
+      instagram: 'https://www.instagram.com/im_bluffing_?igsh=cnBxanMyZ2ZsMGZs',
+      whatsapp: 'https://chat.whatsapp.com/LHD8fxZ0hWHHNczacsyhuk',
+      discord: 'https://discord.gg/ddnwDEEHT',
+      youtube: 'https://youtube.com/@mrzfluffy1?si=bekocxyQqSC1u4h3'
+    }
+  },
+  {
+    id: '15',
+    name: 'MRZ DNL',
+    bio: 'Member',
+    avatar: 'https://i.imgur.com/6DWe9yb.jpeg',
+    links: { 
+      instagram: 'https://www.instagram.com/_mrz.dnl?igsh=MWZrazNmdWZ2M2Uzdg==',
+      whatsapp: 'https://chat.whatsapp.com/L3V7rA58ptQ93sI3dQkmhw?mode=gi_t',
+      youtube: 'https://youtube.com/@mrzdnl?si=Mm4YgJWGTlD8eftf'
+    }
+  },
+  {
+    id: '16',
+    name: 'MRZ Amban Pro',
+    bio: 'Member',
+    avatar: 'https://i.imgur.com/IyAt5JP.jpeg',
+    links: { 
+      instagram: 'https://www.instagram.com/ambaan_proo?igsh=NWx2dGwzYjBlbDBy',
+      discord: 'https://discord.gg/EfTzpFnF8',
+      whatsapp: 'https://chat.whatsapp.com/H9hmm5RZMMx9xA2X9BWj93',
+      youtube: 'https://youtube.com/@mrzambaanpr00?si=DD1bzgf39bgIRLeh'
+    }
+  },
+  {
+    id: '17',
+    name: 'MRZ Charan',
+    bio: 'Member',
+    avatar: 'https://i.imgur.com/KsSuMm2.jpeg',
+    links: { 
+      instagram: 'https://www.instagram.com/mrz_charan?igsh=MzdnMTd2aXJtdzRk',
+      discord: 'https://discord.gg/9DaNP3Tu',
+      whatsapp: 'https://chat.whatsapp.com/J5AgsfnfXpHG509LOOd6s0',
+      youtube: 'https://youtube.com/@mrz_charan?si=NJnpo4ImbZ8vyT3M',
+      kick: 'https://kick.com/mrzcharan'
+    }
+  },
+  {
+    id: '18',
+    name: 'MRZ The God',
+    bio: 'Member',
+    avatar: 'https://i.imgur.com/r0rEq0E.jpeg',
+    links: { 
+      instagram: 'https://www.instagram.com/dios_the_god_?igsh=OXlyZWp0YmtqdWVw',
+      discord: 'https://discord.gg/ddnwDEEHT',
+      whatsapp: 'https://chat.whatsapp.com/LHD8fxZ0hWHHNczacsyhuk',
+      youtube: 'https://youtube.com/@mrzthegod?si=f5weon9DDtZu8RcM'
+    }
+  },
+  {
+    id: '19',
+    name: 'MRZ Joshua',
+    bio: 'Member',
+    avatar: 'https://i.imgur.com/W194TQI.jpeg',
+    links: { 
+      instagram: 'https://www.instagram.com/joshuafps?igsh=ZzNnaHdpZDloMzVj',
+      whatsapp: 'https://chat.whatsapp.com/LHD8fxZ0hWHHNczacsyhuk',
+      discord: 'https://discord.gg/ddnwDEEHT',
+      youtube: 'https://youtube.com/@mrzjoshua?si=jaa4SMyXJCgFanax',
+      kick: 'https://kick.com/joshuafps'
+    }
+  },
+  {
+    id: '20',
+    name: 'MRZ Takai',
+    bio: 'Member',
+    avatar: 'https://i.imgur.com/pXKzYob.jpeg',
+    links: { 
+      instagram: 'https://www.instagram.com/takai.mrz?igsh=MXJqZnNleGZjZDZ4Mg==',
+      discord: 'https://discord.gg/Te2DVU7B6',
+      whatsapp: 'https://chat.whatsapp.com/LXEuib90sb1HdN2RevZT5F?mode=gi_t',
+      youtube: 'https://youtube.com/@mrztakai?si=aaIcx-ZFkRXrSqYv'
+    }
+  },
+  {
+    id: '21',
+    name: 'MRZ Sakai',
+    bio: 'Member',
+    avatar: 'https://i.imgur.com/eRa53Qp.jpeg',
+    links: { 
+      instagram: 'https://www.instagram.com/mrzsakai?igsh=MWpmcWoxeWRmY28xMQ==',
+      discord: 'https://discord.gg/Te2DVU7B6',
+      whatsapp: 'https://chat.whatsapp.com/LXEuib90sb1HdN2RevZT5F?mode=gi_t',
+      youtube: 'https://youtube.com/@mrzsakaiii?si=wBc6IGY2b-Rt78Ug'
+    }
+  },
+  {
+    id: '22',
+    name: 'MRZ Speedo',
+    bio: 'Member',
+    avatar: 'https://i.imgur.com/5eo1JgS.jpeg',
+    links: { 
+      instagram: 'https://www.instagram.com/ig.speedo_?igsh=aGQyenkxbnUyd2E3',
+      discord: 'https://discord.gg/HNz5s2mBg',
+      whatsapp: 'https://chat.whatsapp.com/KRHnOkPUG92DMiRQI9Solw?mode=gi_t',
+      youtube: 'https://youtube.com/@speedo_fps?si=RWRC_24VxiOFCFHx'
+    }
+  },
+  {
+    id: '23',
+    name: 'MRZ Ikkrumon',
+    bio: 'Member',
+    avatar: 'https://i.imgur.com/5BnTIGz.jpeg',
+    links: { 
+      instagram: 'https://www.instagram.com/mrz.ikruuuuh?igsh=ZHQ5OGU4eGh3czMx',
+      youtube: 'https://youtube.com/@ikruuuuh_mrz?si=40M0_9rvuSPHyiRq'
+    }
+  },
+  {
+    id: '24',
+    name: 'MRZ Pranav',
+    bio: 'Member',
+    avatar: 'https://i.imgur.com/l14jzxt.jpeg',
+    links: { 
+      instagram: 'https://www.instagram.com/mrz_pranav?igsh=dzB6bGtldmtjMTF5',
+      discord: 'https://discord.gg/EQRd769vC',
+      whatsapp: 'https://chat.whatsapp.com/CjobfhXJVj1CY5nrwerVFs?mode=gi_t',
+      youtube: 'https://youtube.com/@prnvv1hz?si=j4NJdAyXlF2Lj-7G'
+    }
+  },
+  {
+    id: '25',
+    name: 'MRZ Pappadaam',
+    bio: 'Member',
+    avatar: 'https://i.imgur.com/rdVzGoL.jpeg',
+    links: { 
+      instagram: 'https://www.instagram.com/vegetamyron_?igsh=MWV6NHNnamtzbGhlaA==',
+      discord: 'https://discord.gg/ddnwDEEHT',
+      whatsapp: 'https://chat.whatsapp.com/LHD8fxZ0hWHHNczacsyhuk',
+      youtube: 'https://youtube.com/@vegetagaming69696?si=iDBdUEdCV_rlyxiN'
+    }
+  },
+  {
+    id: '26',
+    name: 'MRZ Kidu',
+    bio: 'Member',
+    avatar: 'https://i.imgur.com/CjsGhRK.png',
+    links: { 
+      instagram: 'https://www.instagram.com/ig_kiduuuuu?igsh=MXR0eDUwcmF4d3k3YQ==',
+      discord: 'https://discord.gg/mfpjYq62',
+      whatsapp: 'https://chat.whatsapp.com/J5AgsfnfXpHG509LOOd6s0',
+      youtube: 'https://youtube.com/@kiduuu.7tw?si=LJWlGtC1fvqW26Ue'
+    }
+  },
+  {
+    id: '27',
+    name: 'MRZ Bruce',
+    bio: 'Member',
+    avatar: 'https://i.imgur.com/YWWZqIt.jpeg',
+    links: { 
+      instagram: 'https://www.instagram.com/just_aimx?igsh=bGJhejZqaHdsaGZ5',
+      youtube: 'https://youtube.com/@aimxmalpro'
+    }
+  },
+  {
+    id: '28',
+    name: 'MRZ Malik',
+    bio: 'Member',
+    avatar: 'https://i.imgur.com/ViCgqWo.jpeg',
+    links: { 
+      instagram: 'https://www.instagram.com/mrz_malikk?igsh=NjdlYmFmNnh5dHBr',
+      discord: 'https://discord.gg/cBTWNJZTAD',
+      whatsapp: 'https://chat.whatsapp.com/CPsg5pA5hs2E3fRaHwvbHY?mode=gi_t',
+      youtube: 'https://youtube.com/@stormforca007?si=y62vHsKBA6Jlv0lW'
+    }
+  },
+  {
+    id: '29',
+    name: 'MRZ Jasi',
+    bio: 'Member',
+    avatar: 'https://i.imgur.com/hXUznbP.jpeg',
+    links: { 
+      instagram: 'https://www.instagram.com/og_mrz_jasi?igsh=MW9nOGk1dnR4azRzNQ==',
+      discord: 'https://discord.gg/fzyM8BgQZ',
+      youtube: 'https://youtube.com/@jasivlogsgaming2937?si=6f8vmuc1YaEWGT6i'
+    }
+  },
+  {
+    id: '30',
+    name: 'MRZ JJ',
+    bio: 'Member',
+    avatar: 'https://i.imgur.com/VmKmp0M.png',
+    links: { 
+      instagram: 'https://www.instagram.com/mrz.jeje?igsh=MjZqYzZtMDZ0cTI2',
+      discord: 'https://discord.gg/p9TX2mQBs',
+      whatsapp: 'https://chat.whatsapp.com/Le0a9g6zijZEmUCgh6VvcH?mode=gi_t',
+      youtube: 'https://youtube.com/@mrz-jj?si=rBgL1ro-vq6cXeEy'
+    }
+  },
+  {
+    id: '31',
+    name: 'MRZ Charlie',
+    bio: 'Member',
+    avatar: 'https://i.imgur.com/pZx3jkn.jpeg',
+    links: { 
+      instagram: 'https://www.instagram.com/not_chxrlie.exe?igsh=MTN0NWJpOWQ0ZWV6Ng==',
+      discord: 'https://discord.gg/cyA3m3Gc5w',
+      youtube: 'https://youtube.com/@mrz.not_charlie?si=AgUVPh5qo4GBAurv'
+    }
+  },
+  {
+    id: '32',
+    name: 'MRZ Kareemeen Gwad',
+    bio: 'Member',
+    avatar: 'https://i.imgur.com/O8NIZHd.jpeg',
+    links: { 
+      instagram: 'https://www.instagram.com/kareemeen_gwad._?igsh=MWNiNWlsdGFjcXpzcA==',
+      discord: 'https://discord.gg/z85eStK38p',
+      youtube: 'https://youtube.com/@kareemeengwad?si=rbQip6YQqonpxU-_'
+    }
+  },
+  {
+    id: '33',
+    name: 'MRZ Chapz',
+    bio: 'Member',
+    avatar: 'https://i.imgur.com/Wc3r6a8.jpeg',
+    links: { 
+      instagram: 'https://www.instagram.com/ig.chapzgaming?igsh=MWN6dmF3bG9kenhzcQ==',
+      whatsapp: 'https://chat.whatsapp.com/HepTxr0wwocHZxQi0Kzpsp',
+      youtube: 'https://youtube.com/@chapzg47?si=hdpbvCDAVh_JfFDB'
+    }
+  },
+  {
+    id: '34',
+    name: 'MRZ Rozario',
+    bio: 'Member',
+    avatar: 'https://i.imgur.com/RgKBr8k.jpeg',
+    links: { 
+      instagram: 'https://www.instagram.com/mrz_rozario_?igsh=Zm96bmQ1YXFjaGhr',
+      discord: 'https://discord.gg/8n6aj8GMf',
+      whatsapp: 'https://chat.whatsapp.com/Bpe8dUHXNpBLFsrZsV6c4m',
+      youtube: 'https://youtube.com/@mrz_rozario?si=E_L831Qh1YmW27Fm'
+    }
+  },
+  {
+    id: '35',
+    name: 'MRZ Alan',
+    bio: 'Member',
+    avatar: 'https://i.imgur.com/6wOIsMH.jpeg',
+    links: { 
+      instagram: 'https://www.instagram.com/mrz_alan.exe?igsh=bmxtbjNqazBwOTcz',
+      discord: 'https://discord.gg/729N6SkqWY',
+      youtube: 'https://youtube.com/@mrzalan_exe?si=2TIV5zQkq8frjdBv'
+    }
+  },
+  {
+    id: '36',
+    name: 'MRZ Bull OP',
+    bio: 'Member',
+    avatar: 'https://i.imgur.com/1vpO12t.png',
+    links: { 
+      instagram: 'https://www.instagram.com/bull.0p?igsh=MWdzcjByYnJndTluMA==',
+      discord: 'https://discord.gg/2WhJSSeRDA',
+      whatsapp: 'https://chat.whatsapp.com/LFTppLhihpWFxlvLou6QxE?mode=gi_t',
+      youtube: 'https://youtube.com/@bull-o-p?si=kGWJyheYwHuc8RJR'
+    }
+  },
+  {
+    id: '37',
+    name: 'MRZ Usman',
+    bio: 'Member',
+    avatar: 'https://i.imgur.com/dHFKHJr.jpeg',
+    links: { 
+      instagram: 'https://www.instagram.com/_mrz_usman_?igsh=MW44dnNvcHJwcHYydA==',
+      discord: 'https://discord.gg/QxQw9n6UN',
+      youtube: 'https://youtube.com/@usman999w?si=j_ZSVbAQ43IZi8L-'
+    }
+  },
+  {
+    id: '38',
+    name: 'MRZ Blake',
+    bio: 'Member',
+    avatar: 'https://i.imgur.com/7w67amc.jpeg',
+    links: { 
+      instagram: 'https://www.instagram.com/mrz_blake?igsh=YmxwbnZzemxhMXpy',
+      discord: 'https://discord.gg/D3yXhhXh',
+      whatsapp: 'https://chat.whatsapp.com/CnHBbM7kJLTJlAY4nXNFRB',
+      youtube: 'https://youtube.com/@mrz_blake?si=rXSr4nPBAqjKhIwE'
+    }
+  },
+  {
+    id: '39',
+    name: 'MRZ Ismail',
+    bio: 'Member',
+    avatar: 'https://i.imgur.com/7vmWKHA.jpeg',
+    links: { 
+      instagram: 'https://www.instagram.com/mrz_ismailw?igsh=dWlvNjRxY2xmcms0',
+      discord: 'https://discord.gg/NjKYKu3Ke',
+      whatsapp: 'https://chat.whatsapp.com/JkeifOoRM3E0apqsJyzh7w?mode=gi_t',
+      youtube: 'https://youtube.com/@ismailrpw?si=SPT9mrg7EBUzZM1d'
+    }
+  },
+  {
+    id: '40',
+    name: 'MRZ Minnal',
+    bio: 'Member',
+    avatar: 'https://i.imgur.com/0Lxu5sU.png',
+    links: { 
+      instagram: 'https://www.instagram.com/userdead.luvv?igsh=djZ3cHZndW9namxt',
+      youtube: 'https://youtube.com/@real.minnal-y4h?si=D9XHSCz6_6QWVJ-3'
+    }
+  },
+  {
+    id: '41',
+    name: 'MRZ Shibu',
+    bio: 'Member',
+    avatar: 'https://i.imgur.com/Fr5tjNj.jpeg',
+    links: { 
+      instagram: 'https://www.instagram.com/mrz_shibusulth4n/',
+      discord: 'https://discord.gg/8m3SP3vnH5',
+      whatsapp: 'https://chat.whatsapp.com/JFKEX0Tl59o0fVbUzjt0tE?mode=gi_t',
+      youtube: 'https://youtube.com/@shibusulth4n?si=WMxmEAcWRHOLY4v6'
+    }
+  },
+  {
+    id: '42',
+    name: 'MRZ Bobby',
+    bio: 'Member',
+    avatar: 'https://i.imgur.com/3UXbgU1.jpeg',
+    links: { 
+      instagram: 'https://www.instagram.com/mrzbobby?igsh=YXFrcHF4cGd3YXRk',
+      whatsapp: 'https://chat.whatsapp.com/CzjZywI7pPW8AIp2KI5UfL',
+      youtube: 'https://youtube.com/@mrzbobby?si=q4kEVSaBYt-io60s'
     }
   }
 ];
@@ -357,6 +697,37 @@ const BackgroundDecorations = () => {
 
 export default function App() {
   const [searchQuery, setSearchQuery] = useState('');
+  const [isCopied, setIsCopied] = useState(false);
+
+  const handleShare = async () => {
+    playTapSound();
+    const shareUrl = window.location.href;
+    const shareData = {
+      title: 'MRZ GTA Official',
+      text: 'Check out the official MRZ GTA Gang website and core member profiles!',
+      url: shareUrl
+    };
+
+    if (navigator.share && navigator.canShare && navigator.canShare(shareData)) {
+      try {
+        await navigator.share(shareData);
+        logToDiscord(`📤 Someone shared the site using native share!`, 0x10B981, "Site Shared");
+        return;
+      } catch (err) {
+        console.log('Share failed or canceled', err);
+      }
+    }
+
+    // Fallback: Copy to clipboard
+    try {
+      await navigator.clipboard.writeText(shareUrl);
+      setIsCopied(true);
+      logToDiscord(`📤 Someone copied the site link to their clipboard!`, 0x10B981, "Link Copied");
+      setTimeout(() => setIsCopied(false), 2000);
+    } catch (err) {
+      console.error('Failed to copy to clipboard', err);
+    }
+  };
 
   const filteredProfiles = PROFILES.filter((profile) => {
     const query = searchQuery.toLowerCase().trim();
@@ -410,8 +781,8 @@ export default function App() {
         `> **Integrity**: Config & Profiles verified\n\n` +
         `#### 📝 Site Activity Logs\n` +
         `*   **Commands**: \`SYSTEM_CHECK\`, \`HEARTBEAT_SYNC\`\n` +
-        `*   **Card Actions**: \`STABLE\` (Live real-time search interface active)\n` +
-        `*   **Site Updates**: \`v1.3.1_EXPLORE\` (Real-time card filter with sound effects deployed)\n\n` +
+        `*   **Card Actions**: \`UPDATED\` (MRZ Bobby card added)\n` +
+        `*   **Site Updates**: \`v1.6.6_EXPANSION\` (Bobby active member card deployed)\n\n` +
         `#### 🐛 Debugging Intelligence\n` +
         `*   **Bugs Found**: \`0\` (Scan clean)\n` +
         `*   **Bugs Fixed**: \`9\` (All known issues patched)\n` +
@@ -586,8 +957,28 @@ export default function App() {
             whileInView={{ opacity: 1 }}
             className="flex flex-col items-center gap-6"
           >
-            <div className="w-12 h-12 rounded-full border border-amber-400/30 flex items-center justify-center text-amber-400 group cursor-pointer hover:bg-amber-400 hover:text-black transition-all">
-              <ChevronRight className="rotate-90" />
+            <div 
+              onClick={handleShare}
+              className="relative group flex flex-col items-center gap-2.5 cursor-pointer"
+            >
+              <motion.div 
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+                className={cn(
+                  "w-12 h-12 rounded-full border flex items-center justify-center transition-all duration-300",
+                  isCopied 
+                    ? "border-emerald-400/55 bg-emerald-500/10 text-emerald-400 shadow-[0_0_15px_rgba(16,185,129,0.3)]" 
+                    : "border-amber-400/30 bg-amber-400/5 text-amber-400 hover:bg-amber-400 hover:text-black hover:border-amber-400 hover:shadow-[0_0_15px_rgba(251,191,36,0.35)]"
+                )}
+                title="Share this site"
+              >
+                {isCopied ? <Check size={20} /> : <Share2 size={20} />}
+              </motion.div>
+              {isCopied && (
+                <span className="text-xs tracking-wider font-mono text-emerald-400 font-semibold scale-105 transition-all duration-300">
+                  LINK COPIED TO CLIPBOARD!
+                </span>
+              )}
             </div>
             <p className="text-amber-100/20 text-sm tracking-widest uppercase">
               &copy; MRZ Offical 2026 &bull; All Rights Reserved 
