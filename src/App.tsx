@@ -131,10 +131,46 @@ const PROFILES: Profile[] = [
     }
   },
   {
+    id: '14',
+    name: 'MRZ Fluffy',
+    bio: 'Member',
+    avatar: 'https://i.imgur.com/WwYmMa7.jpeg',
+    links: { 
+      instagram: 'https://www.instagram.com/im_bluffing_?igsh=cnBxanMyZ2ZsMGZs',
+      whatsapp: 'https://chat.whatsapp.com/LHD8fxZ0hWHHNczacsyhuk',
+      discord: 'https://discord.gg/ddnwDEEHT',
+      youtube: 'https://youtube.com/@mrzfluffy1?si=bekocxyQqSC1u4h3'
+    }
+  },
+  {
+    id: '43',
+    name: 'MRZ CK Mari',
+    bio: 'Member',
+    avatar: 'https://i.imgur.com/ofEBomu.jpeg',
+    links: { 
+      instagram: 'https://www.instagram.com/mrz_maari?igsh=a2V4OWR4dmQwbTZh',
+      discord: 'https://discord.gg/AHS8dvcc7r',
+      youtube: 'https://youtube.com/@mrzmaari?si=odLydP1y8enVv6QM',
+      youtube2: 'https://youtube.com/@chakkahere?si=_iuNRA_GmIK6kCNn'
+    }
+  },
+  {
+    id: '28',
+    name: 'MRZ Malik',
+    bio: 'Member',
+    avatar: 'https://i.imgur.com/ViCgqWo.jpeg',
+    links: { 
+      instagram: 'https://www.instagram.com/mrz_malikk?igsh=NjdlYmFmNnh5dHBr',
+      discord: 'https://discord.gg/cBTWNJZTAD',
+      whatsapp: 'https://chat.whatsapp.com/CPsg5pA5hs2E3fRaHwvbHY?mode=gi_t',
+      youtube: 'https://youtube.com/@stormforca007?si=y62vHsKBA6Jlv0lW'
+    }
+  },
+  {
     id: '11',
     name: 'MRZ Zendnex Duvor',
     bio: 'Member',
-    avatar: 'https://i.imgur.com/PmYuQAz.jpeg',
+    avatar: 'https://i.imgur.com/KbWURpd.png',
     links: { 
       instagram: 'https://www.instagram.com/mrz_zen?igsh=dzRhZDF4dTc2ODlr',
       whatsapp: 'https://chat.whatsapp.com/L49j7MsExBU3YYRqWGuuL2',
@@ -165,18 +201,6 @@ const PROFILES: Profile[] = [
       discord: 'https://discord.gg/Vn4ksKMTz',
       whatsapp: 'https://chat.whatsapp.com/DjGhfkQpaZH7xHHWhLhjaj',
       youtube: 'https://youtube.com/@mrzfalcn?si=IQlfUB1BLc4ahTW2'
-    }
-  },
-  {
-    id: '14',
-    name: 'MRZ Fluffy',
-    bio: 'Member',
-    avatar: 'https://i.imgur.com/WwYmMa7.jpeg',
-    links: { 
-      instagram: 'https://www.instagram.com/im_bluffing_?igsh=cnBxanMyZ2ZsMGZs',
-      whatsapp: 'https://chat.whatsapp.com/LHD8fxZ0hWHHNczacsyhuk',
-      discord: 'https://discord.gg/ddnwDEEHT',
-      youtube: 'https://youtube.com/@mrzfluffy1?si=bekocxyQqSC1u4h3'
     }
   },
   {
@@ -330,18 +354,6 @@ const PROFILES: Profile[] = [
     links: { 
       instagram: 'https://www.instagram.com/just_aimx?igsh=bGJhejZqaHdsaGZ5',
       youtube: 'https://youtube.com/@aimxmalpro'
-    }
-  },
-  {
-    id: '28',
-    name: 'MRZ Malik',
-    bio: 'Member',
-    avatar: 'https://i.imgur.com/ViCgqWo.jpeg',
-    links: { 
-      instagram: 'https://www.instagram.com/mrz_malikk?igsh=NjdlYmFmNnh5dHBr',
-      discord: 'https://discord.gg/cBTWNJZTAD',
-      whatsapp: 'https://chat.whatsapp.com/CPsg5pA5hs2E3fRaHwvbHY?mode=gi_t',
-      youtube: 'https://youtube.com/@stormforca007?si=y62vHsKBA6Jlv0lW'
     }
   },
   {
@@ -499,39 +511,66 @@ const PROFILES: Profile[] = [
     avatar: 'https://i.imgur.com/3UXbgU1.jpeg',
     links: { 
       instagram: 'https://www.instagram.com/mrzbobby?igsh=YXFrcHF4cGd3YXRk',
+      discord: 'https://discord.gg/kxjH3RBprB',
       whatsapp: 'https://chat.whatsapp.com/CzjZywI7pPW8AIp2KI5UfL',
       youtube: 'https://youtube.com/@mrzbobby?si=q4kEVSaBYt-io60s'
+    }
+  },
+  {
+    id: '44',
+    name: 'MRZ Rayan',
+    bio: 'Member',
+    avatar: 'https://i.imgur.com/IFwg1q6.jpeg',
+    links: { 
+      instagram: 'https://www.instagram.com/mrz_ry4n?igsh=MXNta2ZlYmMza3V2Nw==',
+      youtube: 'https://youtube.com/@mrz_ryan?si=p6wA6feIuliRMiMn'
+    }
+  },
+  {
+    id: '45',
+    name: 'MRZ Cooper',
+    bio: 'Member',
+    avatar: 'https://i.imgur.com/KHZiBfd.jpeg',
+    links: { 
+      instagram: 'https://www.instagram.com/_mrz_cooper?igsh=bDR3aHdhczcyN3Fy',
+      youtube: 'https://youtube.com/@coooper_op?si=4-7vQQW1iw95AOqA'
     }
   }
 ];
 
+const getApiUrl = (endpoint: string) => {
+  const origin = window.location.origin;
+  // Fallback to ensuring we target host correctly if sandbox iframe creates a virtual base
+  return `${origin.endsWith('/') ? origin.slice(0, -1) : origin}${endpoint}`;
+};
+
 const logToDiscord = async (message: string, color?: number, label?: string) => {
   try {
-    await fetch('/api/log-interaction', {
+    await fetch(getApiUrl('/api/log-interaction'), {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ message, color, label }),
     });
   } catch (err) {
-    console.error('Failed to log to Discord:', err);
+    console.warn('[Telemetry] Skipped registering Discord interaction log:', err instanceof Error ? err.message : String(err));
   }
 };
 
 const logDevEvent = async (title: string, message: string, color?: number) => {
   try {
-    await fetch('/api/log-dev-event', {
+    await fetch(getApiUrl('/api/log-dev-event'), {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ title, message, color }),
     });
   } catch (err) {
-    console.error('Failed to log dev event:', err);
+    console.warn('[Telemetry] Skipped dev event log:', err instanceof Error ? err.message : String(err));
   }
 };
 
 const sendHeartbeat = async (clientId: string) => {
   try {
-    await fetch('/api/heartbeat', {
+    await fetch(getApiUrl('/api/heartbeat'), {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ clientId }),
@@ -773,8 +812,8 @@ export default function App() {
         `> **Integrity**: Config & Profiles verified\n\n` +
         `#### 📝 Site Activity Logs\n` +
         `*   **Commands**: \`SYSTEM_CHECK\`, \`HEARTBEAT_SYNC\`\n` +
-        `*   **Card Actions**: \`UPDATED\` (MRZ Bobby card added)\n` +
-        `*   **Site Updates**: \`v1.6.6_EXPANSION\` (Bobby active member card deployed)\n\n` +
+        `*   **Card Actions**: \`UPDATED\` (MRZ Zendnex Duvor avatar updated)\n` +
+        `*   **Site Updates**: \`v1.7.3_EXPANSION\` (Zendnex Duvor visual asset updated)\n\n` +
         `#### 🐛 Debugging Intelligence\n` +
         `*   **Bugs Found**: \`0\` (Scan clean)\n` +
         `*   **Bugs Fixed**: \`9\` (All known issues patched)\n` +
@@ -860,9 +899,10 @@ export default function App() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.5 }}
-            className="text-amber-100/40 text-lg md:text-xl max-w-3xl mx-auto font-light"
+            className="text-amber-100/60 text-lg md:text-xl max-w-3xl mx-auto font-medium tracking-wide leading-relaxed italic"
           >
-            MRZ - It's a gang founded by MRZ Thoppi in FiveM GTA Roleplay, Here you can find the each members social profiles who is in this gang.
+            "MRZ - Born in RP, Build as Family.<br />
+            Calm as Angels, Deadly as Devil."
           </motion.p>
         </header>
 

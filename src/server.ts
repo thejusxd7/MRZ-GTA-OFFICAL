@@ -18,6 +18,8 @@ async function startServer() {
   // Developer Logging Helper
   const sendDevLog = async (title: string, message: string, color: number = 0x3B82F6) => {
     const devWebhook = process.env.DISCORD_DEV_LOGS_WEBHOOK_URL || "https://discord.com/api/webhooks/1505224175206273094/vo1Ai_jiabY1hOBB3m-Ip9_I6Ithf_71ERh6gTLLh9DhYICsjxnbpNgarprYYHrIMvZh";
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 4000);
     try {
       await fetch(devWebhook, {
         method: "POST",
@@ -32,10 +34,13 @@ async function startServer() {
             timestamp: new Date().toISOString(),
             footer: { text: "MRZ Developer Internal Logs" }
           }]
-        })
+        }),
+        signal: controller.signal
       });
     } catch (err) {
       console.error("[Dev Log] Failed to send log:", err);
+    } finally {
+      clearTimeout(timeoutId);
     }
   };
 
@@ -83,6 +88,9 @@ async function startServer() {
     // Default to Amber if no valid color provided
     const displayColor = typeof incomingColor === 'number' ? incomingColor : 16500516;
 
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 4000);
+
     try {
       const response = await fetch(webhookUrl, {
         method: "POST",
@@ -104,6 +112,7 @@ async function startServer() {
             },
           ],
         }),
+        signal: controller.signal
       });
 
       if (response.ok) {
@@ -116,6 +125,8 @@ async function startServer() {
     } catch (error) {
       console.error("[Interaction Log] Fatal Fetch Error:", error);
       res.status(500).json({ error: "Internal server error" });
+    } finally {
+      clearTimeout(timeoutId);
     }
   });
 
@@ -204,12 +215,16 @@ async function startServer() {
       ],
     };
 
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 4000);
+
     try {
       console.log("[Status Job] Sending payload to Discord...");
       const response = await fetch(statusWebhook, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload)
+        body: JSON.stringify(payload),
+        signal: controller.signal
       });
 
       if (response.ok) {
@@ -221,15 +236,26 @@ async function startServer() {
         // Try fallback to simple message if embed fails
         if (response.status === 400) {
            console.log("[Status Job] Attempting simple message fallback...");
-           await fetch(statusWebhook, {
-             method: "POST",
-             headers: { "Content-Type": "application/json" },
-             body: JSON.stringify({ content: `🚀 **MRZ Online** | Users: ${onlineUserCount} | Status: STABLE` })
-           });
+           const fallbackController = new AbortController();
+           const fallbackTimeoutId = setTimeout(() => fallbackController.abort(), 3000);
+           try {
+             await fetch(statusWebhook, {
+               method: "POST",
+               headers: { "Content-Type": "application/json" },
+               body: JSON.stringify({ content: `🚀 **MRZ Online** | Users: ${onlineUserCount} | Status: STABLE` }),
+               signal: fallbackController.signal
+             });
+           } catch {
+             // Ignore fallback timeout failures
+           } finally {
+             clearTimeout(fallbackTimeoutId);
+           }
         }
       }
     } catch (err) {
       console.error("[Status Job] Fetch failure:", err);
+    } finally {
+      clearTimeout(timeoutId);
     }
   };
 
