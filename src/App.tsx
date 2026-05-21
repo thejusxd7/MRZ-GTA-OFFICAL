@@ -547,20 +547,15 @@ const playTapSound = () => {
   audio.play().catch(() => {}); // Ignore errors if browser blocks autoplay before interaction
 };
 
-const GlassCard: React.FC<{ profile: Profile }> = ({ profile }) => {
+const GlassCard = React.memo<{ profile: Profile }>(({ profile }) => {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 30 }}
+      initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-50px" }}
-      whileHover={{ y: -5, scale: 1.02 }}
+      viewport={{ once: true, margin: "-30px" }}
+      transition={{ duration: 0.4, ease: "easeOut" }}
       onClick={() => playTapSound()}
-      transition={{ 
-        type: "spring",
-        stiffness: 260,
-        damping: 20
-      }}
-      className="liquid-glass amber-glow relative overflow-hidden rounded-[2.5rem] p-8 md:p-10 group will-change-transform cursor-pointer"
+      className="liquid-glass amber-glow relative overflow-hidden rounded-[2.5rem] p-8 md:p-10 group cursor-pointer transition-all duration-300 hover:-translate-y-1 hover:scale-[1.015] hover:shadow-[0_15px_30px_rgba(251,191,36,0.18)]"
       id={`profile-${profile.id}`}
     >
       {/* Liquid background decorative element */}
@@ -570,17 +565,14 @@ const GlassCard: React.FC<{ profile: Profile }> = ({ profile }) => {
       <div className="flex flex-col gap-8 items-center relative z-10">
         {/* Profile Picture */}
         <div className="relative shrink-0">
-          <motion.div 
-            whileHover={{ scale: 1.1, rotate: 5 }}
-            className="w-32 h-32 md:w-36 md:h-36 rounded-[2rem] overflow-hidden border-2 border-amber-400/30 shadow-lg"
-          >
+          <div className="w-32 h-32 md:w-36 md:h-36 rounded-[2rem] overflow-hidden border-2 border-amber-400/30 shadow-lg transition-transform duration-300 group-hover:scale-105 group-hover:rotate-2">
             <img 
               src={profile.avatar} 
               alt={profile.name}
               className="w-full h-full object-cover"
               referrerPolicy="no-referrer"
             />
-          </motion.div>
+          </div>
         </div>
 
         {/* Content */}
@@ -641,53 +633,52 @@ const GlassCard: React.FC<{ profile: Profile }> = ({ profile }) => {
       </div>
     </motion.div>
   );
-};
+});
+GlassCard.displayName = 'GlassCard';
 
-const SocialLink: React.FC<{ icon: React.ReactNode, label: string, href?: string, color: string, memberName: string }> = ({ icon, label, href, color, memberName }) => {
+const SocialLink = React.memo<{ icon: React.ReactNode, label: string, href?: string, color: string, memberName: string }>(({ icon, label, href, color, memberName }) => {
   if (!href) return null;
   
   return (
-    <motion.a
+    <a
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-    onClick={(e) => {
-      playTapSound();
-      let embedColor = 16500516; // Default Amber (0xFBBF24)
-      const labelLower = label.toLowerCase();
-      if (labelLower.includes('youtube')) embedColor = 16711680; // Red (0xFF0000)
-      else if (labelLower.includes('instagram')) embedColor = 16761035; // Pink (0xFFC0CB)
-      else if (labelLower.includes('whatsapp')) embedColor = 25600; // Dark Green (0x006400)
-      else if (labelLower.includes('kick')) embedColor = 65280; // Lime (0x00FF00)
-      else if (labelLower.includes('discord')) embedColor = 5814770; // Blurple (0x5865F2)
+      onClick={(e) => {
+        playTapSound();
+        let embedColor = 16500516; // Default Amber (0xFBBF24)
+        const labelLower = label.toLowerCase();
+        if (labelLower.includes('youtube')) embedColor = 16711680; // Red (0xFF0000)
+        else if (labelLower.includes('instagram')) embedColor = 16761035; // Pink (0xFFC0CB)
+        else if (labelLower.includes('whatsapp')) embedColor = 25600; // Dark Green (0x006400)
+        else if (labelLower.includes('kick')) embedColor = 65280; // Lime (0x00FF00)
+        else if (labelLower.includes('discord')) embedColor = 5814770; // Blurple (0x5865F2)
 
-      logToDiscord(`🔥 Someone clicked on **${memberName}'s** ${label} link`, embedColor, `${memberName} ${label}`);
-    }}
-      whileHover={{ y: -3, scale: 1.05 }}
-      whileTap={{ scale: 0.95 }}
-      className="flex items-center justify-center sm:justify-start gap-2.5 px-3 py-2.5 rounded-xl liquid-glass group overflow-hidden relative w-full"
+        logToDiscord(`🔥 Someone clicked on **${memberName}'s** ${label} link`, embedColor, `${memberName} ${label}`);
+      }}
+      className="flex items-center justify-center sm:justify-start gap-2.5 px-3 py-2.5 rounded-xl liquid-glass group overflow-hidden relative w-full transition-all duration-200 hover:-translate-y-0.5 hover:scale-[1.03] active:scale-95"
     >
       <div className={cn("absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-300", color)} />
       <span className="text-amber-400 group-hover:text-amber-300 transition-colors relative z-10 shrink-0">{icon}</span>
       <span className="font-medium text-amber-50/90 group-hover:text-white transition-colors relative z-10 text-sm whitespace-nowrap">{label}</span>
-    </motion.a>
+    </a>
   );
-};
+});
+SocialLink.displayName = 'SocialLink';
 
 const BackgroundDecorations = () => {
   return (
     <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
       {/* Blurred Background Image */}
       <div 
-        className="absolute inset-0 bg-cover bg-center brightness-[0.2] will-change-[transform,opacity]"
+        className="absolute inset-0 bg-cover bg-center brightness-[0.2] opacity-40"
         style={{
           backgroundImage: 'url("https://i.imgur.com/8SQwxsu.jpeg")',
-          opacity: 0.4
         }}
       />
-      {/* Background Glows */}
-      <div className="absolute top-[10%] left-[20%] w-[400px] h-[400px] bg-amber-500/10 blur-[100px] rounded-full animate-liquid will-change-transform" />
-      <div className="absolute bottom-[20%] right-[10%] w-[500px] h-[500px] bg-amber-600/5 blur-[120px] rounded-full animate-liquid will-change-transform" style={{ animationDelay: '-5s' }} />
+      {/* Background Glows (Static for supreme performance) */}
+      <div className="absolute top-[10%] left-[20%] w-[400px] h-[400px] bg-amber-500/10 blur-[100px] rounded-full" />
+      <div className="absolute bottom-[20%] right-[10%] w-[500px] h-[500px] bg-amber-600/5 blur-[120px] rounded-full" />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full opacity-30">
         <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_center,rgba(251,191,36,0.05)_0%,transparent_70%)]" />
       </div>
@@ -698,6 +689,7 @@ const BackgroundDecorations = () => {
 export default function App() {
   const [searchQuery, setSearchQuery] = useState('');
   const [isCopied, setIsCopied] = useState(false);
+  const deferredSearchQuery = React.useDeferredValue(searchQuery);
 
   const handleShare = async () => {
     playTapSound();
@@ -729,14 +721,14 @@ export default function App() {
     }
   };
 
-  const filteredProfiles = PROFILES.filter((profile) => {
-    const query = searchQuery.toLowerCase().trim();
-    if (!query) return true;
-    return (
+  const filteredProfiles = React.useMemo(() => {
+    const query = deferredSearchQuery.toLowerCase().trim();
+    if (!query) return PROFILES;
+    return PROFILES.filter((profile) =>
       profile.name.toLowerCase().includes(query) ||
       profile.bio.toLowerCase().includes(query)
     );
-  });
+  }, [deferredSearchQuery]);
 
   useEffect(() => {
     // Generate or retrieve client ID for heartbeat
