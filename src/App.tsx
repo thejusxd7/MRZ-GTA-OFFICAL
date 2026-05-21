@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { motion } from 'motion/react';
 import { 
   Instagram, 
@@ -8,7 +8,9 @@ import {
   Youtube,
   ExternalLink,
   Gamepad2,
-  MonitorPlay
+  MonitorPlay,
+  Search,
+  X
 } from 'lucide-react';
 import { cn } from './lib/utils';
 
@@ -91,6 +93,17 @@ const PROFILES: Profile[] = [
     }
   },
   {
+    id: '10',
+    name: 'MRZ Bilal',
+    bio: 'Member',
+    avatar: 'https://i.imgur.com/0Y4Db6L.jpeg',
+    links: { 
+      discord: 'https://discord.gg/d5Zpxf8Aq', 
+      instagram: 'https://www.instagram.com/mrz_bilal_', 
+      youtube: 'https://youtube.com/@mrz_bilal'
+    }
+  },
+  {
     id: '6',
     name: 'MRZ Raju Bahi',
     bio: 'Member',
@@ -123,17 +136,6 @@ const PROFILES: Profile[] = [
       instagram: 'https://www.instagram.com/not_chxrlie.exe?igsh=MTN0NWJpOWQ0ZWV6Ng==', 
       youtube: 'https://youtube.com/@chakkahere',
       youtube2: 'https://youtube.com/@mrzmaari'
-    }
-  },
-  {
-    id: '10',
-    name: 'MRZ Bilal',
-    bio: 'Member',
-    avatar: 'https://i.imgur.com/0Y4Db6L.jpeg',
-    links: { 
-      discord: 'https://discord.gg/d5Zpxf8Aq', 
-      instagram: 'https://www.instagram.com/mrz_bilal_', 
-      youtube: 'https://youtube.com/@mrz_bilal'
     }
   },
   {
@@ -354,6 +356,17 @@ const BackgroundDecorations = () => {
 };
 
 export default function App() {
+  const [searchQuery, setSearchQuery] = useState('');
+
+  const filteredProfiles = PROFILES.filter((profile) => {
+    const query = searchQuery.toLowerCase().trim();
+    if (!query) return true;
+    return (
+      profile.name.toLowerCase().includes(query) ||
+      profile.bio.toLowerCase().includes(query)
+    );
+  });
+
   useEffect(() => {
     // Generate or retrieve client ID for heartbeat
     let clientId = sessionStorage.getItem('mrz_client_id');
@@ -397,8 +410,8 @@ export default function App() {
         `> **Integrity**: Config & Profiles verified\n\n` +
         `#### 📝 Site Activity Logs\n` +
         `*   **Commands**: \`SYSTEM_CHECK\`, \`HEARTBEAT_SYNC\`\n` +
-        `*   **Card Actions**: \`UPDATED\` (Zendnex successfully rebranded to Zendnex Duvor)\n` +
-        `*   **Site Updates**: \`v1.2.8_AUDIO\` (Premium Haptic Tap SFX implemented)\n\n` +
+        `*   **Card Actions**: \`STABLE\` (Live real-time search interface active)\n` +
+        `*   **Site Updates**: \`v1.3.1_EXPLORE\` (Real-time card filter with sound effects deployed)\n\n` +
         `#### 🐛 Debugging Intelligence\n` +
         `*   **Bugs Found**: \`0\` (Scan clean)\n` +
         `*   **Bugs Fixed**: \`9\` (All known issues patched)\n` +
@@ -490,12 +503,81 @@ export default function App() {
           </motion.p>
         </header>
 
+        {/* Search Bar */}
+        <motion.div 
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          className="max-w-2xl mx-auto w-full mb-12 relative"
+        >
+          <div className="relative group">
+            {/* Ambient glowing background on focus */}
+            <div className="absolute inset-0 bg-amber-400/5 blur-xl rounded-2xl opacity-50 group-focus-within:opacity-100 transition-opacity duration-300 pointer-events-none" />
+            
+            <div className="relative flex items-center liquid-glass border border-amber-400/20 focus-within:border-amber-400/50 rounded-2xl px-5 py-4 transition-all duration-300 shadow-xl bg-black/20">
+              <Search className="text-amber-500/50 group-focus-within:text-amber-400 transition-colors shrink-0 mr-3" size={22} />
+              <input 
+                type="text"
+                placeholder="Search gang members by name or bio..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                className="bg-transparent text-white placeholder-amber-100/30 text-base md:text-lg focus:outline-none w-full font-light"
+              />
+              {searchQuery && (
+                <button 
+                  onClick={() => {
+                    setSearchQuery('');
+                    playTapSound();
+                  }}
+                  className="p-1 rounded-full hover:bg-amber-400/10 text-amber-500/50 hover:text-amber-400 transition-colors shrink-0 ml-2"
+                  title="Clear search"
+                >
+                  <X size={18} />
+                </button>
+              )}
+            </div>
+            
+            {/* Matching counts badge */}
+            <div className="absolute -bottom-6 right-2 flex items-center gap-2">
+              <span className="font-mono text-[10px] uppercase tracking-widest text-amber-400/50">
+                {searchQuery ? `FOUND: ${filteredProfiles.length} / ${PROFILES.length}` : `GANG SIZE: ${PROFILES.length}`}
+              </span>
+            </div>
+          </div>
+        </motion.div>
+
         {/* Profile List */}
-        <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
-          {PROFILES.map((profile, index) => (
-            <GlassCard key={profile.id} profile={profile} />
-          ))}
-        </section>
+        {filteredProfiles.length > 0 ? (
+          <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
+            {filteredProfiles.map((profile, index) => (
+              <GlassCard key={profile.id} profile={profile} />
+            ))}
+          </section>
+        ) : (
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            className="text-center py-16 px-8 liquid-glass border border-amber-400/20 rounded-[2.5rem] max-w-lg mx-auto shadow-2xl relative overflow-hidden my-12"
+          >
+            <div className="absolute -top-12 -right-12 w-32 h-32 bg-amber-600/5 blur-[40px] rounded-full" />
+            <div className="absolute -bottom-12 -left-12 w-32 h-32 bg-amber-600/5 blur-[40px] rounded-full" />
+            
+            <Sparkles className="w-12 h-12 text-amber-500/40 mx-auto mb-6 animate-pulse" />
+            <h3 className="text-2xl font-bold text-amber-50 mb-2">No Members Found</h3>
+            <p className="text-amber-100/40 text-sm max-w-sm mx-auto mb-8 font-light leading-relaxed">
+              We couldn't find any gang members matching "<span className="text-amber-400 font-medium">{searchQuery}</span>". Try searching for names like "Thoppi", "Sheikh", or member bios.
+            </p>
+            <button
+              onClick={() => {
+                setSearchQuery('');
+                playTapSound();
+              }}
+              className="px-6 py-2.5 rounded-xl bg-amber-400/10 hover:bg-amber-400/20 text-amber-400 hover:text-amber-300 font-semibold border border-amber-400/30 transition-all text-sm"
+            >
+              Clear Search Filter
+            </button>
+          </motion.div>
+        )}
 
         {/* Footer */}
         <footer className="pt-24 pb-12 text-center">
