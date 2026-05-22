@@ -41,7 +41,7 @@ const PROFILES: Profile[] = [
     avatar: 'https://i.imgur.com/I3SAppe.jpeg',
     links: { 
       discord: 'https://discord.gg/mrz-thoppi-1080457490849857580',
-      instagram: 'https://www.instagram.com/mrz_thoppi',
+      instagram: 'https://www.instagram.com/mrz_thoppi?igsh=ZTZlN3pieTl3c3U1',
       youtube: 'https://youtube.com/@mrzthoppi?si=9VzF59MXYH6ICZqM'
     }
   },
@@ -52,7 +52,7 @@ const PROFILES: Profile[] = [
     avatar: 'https://i.imgur.com/sswXYxE.jpeg',
     links: { 
       discord: 'https://discord.gg/mCJs57VpK', 
-      instagram: 'https://www.instagram.com/mrz__rambo', 
+      instagram: 'https://www.instagram.com/mrz__rambo?igsh=ZGtxNXdkaWNma2g3', 
       youtube: 'https://youtube.com/@mrzrambo4'
     }
   },
@@ -64,7 +64,7 @@ const PROFILES: Profile[] = [
     links: { 
       discord: 'https://discord.gg/3QSbcUcu7', 
       whatsapp: 'https://sheikh-gaming.vercel.app/', 
-      instagram: 'https://www.instagram.com/_sheikh.official_', 
+      instagram: 'https://www.instagram.com/_sheikh.official_?igsh=MThmeTloZmE1Nmprbg==', 
       youtube: 'https://youtube.com/@sheikhgaming_op?si=p8Ag7Y-b-W5Zc33C',
       kick: 'https://kick.com/Sheikh_Offical'
     }
@@ -77,7 +77,7 @@ const PROFILES: Profile[] = [
     links: { 
       discord: 'https://discord.gg/wHAnZRqNBv', 
       whatsapp: 'https://chat.whatsapp.com/Ht1Y2yT3VFL7n7QRxfv8HW', 
-      instagram: 'https://www.instagram.com/mrz_mackk', 
+      instagram: 'https://www.instagram.com/mrz_mackk?igsh=MTBkbzA4M3pucGNqMg==', 
       youtube: 'https://youtube.com/@mackgaminglive?si=PBkpGINxwikHphOg',
       kick: 'https://kick.com/mack_gaming'
     }
@@ -90,7 +90,7 @@ const PROFILES: Profile[] = [
     links: { 
       discord: 'https://discord.gg/6DR4DMGDwm', 
       whatsapp: 'https://chat.whatsapp.com/HkImfLAPZ6gJyJgolputye', 
-      instagram: 'https://www.instagram.com/mrz.appappan', 
+      instagram: 'https://www.instagram.com/mrz.appappan?igsh=dDRmbHRqZnVubzRt', 
       youtube: 'https://youtube.com/@mrzappappan'
     }
   },
@@ -113,7 +113,7 @@ const PROFILES: Profile[] = [
     avatar: 'https://i.imgur.com/rfmbDOZ.jpeg',
     links: { 
       discord: 'https://discord.gg/Fpx2uWRZ6', 
-      instagram: 'https://www.instagram.com/og_rajubhai', 
+      instagram: 'https://www.instagram.com/og_rajubhai?igsh=emJzeG56bHVzZzRo', 
       youtube: 'https://youtube.com/@mrzrajubhai?si=G6jno-rn60iZaKw9',
       kick: 'https://kick.com/mrzrajubhai'
     }
@@ -125,7 +125,7 @@ const PROFILES: Profile[] = [
     avatar: 'https://i.imgur.com/H4z630d.jpeg',
     links: { 
       discord: 'https://discord.gg/qhYeUBt6sY', 
-      instagram: 'https://www.instagram.com/kurupdenny', 
+      instagram: 'https://www.instagram.com/kurupdenny?igsh=bXE3bXh2MXV1MmRs', 
       youtube: 'https://youtube.com/@kurupdenny',
       kick: 'https://kick.com/dennygaming'
     }
@@ -136,7 +136,7 @@ const PROFILES: Profile[] = [
     bio: 'Member',
     avatar: 'https://i.imgur.com/WwYmMa7.jpeg',
     links: { 
-      instagram: 'https://www.instagram.com/im_bluffing_',
+      instagram: 'https://www.instagram.com/im_bluffing_?igsh=cnBxanMyZ2ZsMGZs',
       whatsapp: 'https://chat.whatsapp.com/LHD8fxZ0hWHHNczacsyhuk',
       discord: 'https://discord.gg/ddnwDEEHT',
       youtube: 'https://youtube.com/@mrzfluffy1?si=bekocxyQqSC1u4h3'
@@ -148,7 +148,7 @@ const PROFILES: Profile[] = [
     bio: 'Member',
     avatar: 'https://i.imgur.com/ofEBomu.jpeg',
     links: { 
-      instagram: 'https://www.instagram.com/mrz_maari',
+      instagram: 'https://www.instagram.com/mrz_maari?igsh=a2V4OWR4dmQwbTZh',
       discord: 'https://discord.gg/AHS8dvcc7r',
       youtube: 'https://youtube.com/@mrzmaari?si=odLydP1y8enVv6QM',
       youtube2: 'https://youtube.com/@chakkahere?si=_iuNRA_GmIK6kCNn'
@@ -160,7 +160,7 @@ const PROFILES: Profile[] = [
     bio: 'Member',
     avatar: 'https://i.imgur.com/ViCgqWo.jpeg',
     links: { 
-      instagram: 'https://www.instagram.com/mrz_malikk',
+      instagram: 'https://www.instagram.com/mrz_malikk?igsh=NjdlYmFmNnh5dHBr',
       discord: 'https://discord.gg/cBTWNJZTAD',
       whatsapp: 'https://chat.whatsapp.com/CPsg5pA5hs2E3fRaHwvbHY?mode=gi_t',
       youtube: 'https://youtube.com/@stormforca007?si=y62vHsKBA6Jlv0lW'
@@ -172,7 +172,7 @@ const PROFILES: Profile[] = [
     bio: 'Member',
     avatar: 'https://i.imgur.com/KbWURpd.png',
     links: { 
-      instagram: 'https://www.instagram.com/mrz_zen',
+      instagram: 'https://www.instagram.com/mrz_zen?igsh=dzRhZDF4dTc2ODlr',
       whatsapp: 'https://chat.whatsapp.com/L49j7MsExBU3YYRqWGuuL2',
       discord: 'https://discord.gg/GqnEEGwAJ7',
       youtube: 'https://youtube.com/@mrzzendnex?si=KqS8iF7pu02Se_w0',
@@ -188,7 +188,8 @@ const PROFILES: Profile[] = [
       instagram: 'https://www.instagram.com/ig_alexduvor?',
       discord: 'https://discord.gg/H3ZEW5zACv',
       whatsapp: 'https://chat.whatsapp.com/CVkkDSE0hacH1QEkgyU9gI',
-      youtube: 'https://youtube.com/@alex_exe?si=9p8uz-nU0Y57VgLE'
+      youtube: 'https://youtube.com/@alex_exe?si=9p8uz-nU0Y57VgLE',
+      kick: 'https://kick.com/alexduvor'
     }
   },
   {
@@ -197,7 +198,7 @@ const PROFILES: Profile[] = [
     bio: 'Member',
     avatar: 'https://i.imgur.com/WzZed8n.jpeg',
     links: { 
-      instagram: 'https://www.instagram.com/the_4alcon',
+      instagram: 'https://www.instagram.com/the_4alcon?igsh=MWt5cGpvYzlwaHppZQ==',
       discord: 'https://discord.gg/Vn4ksKMTz',
       whatsapp: 'https://chat.whatsapp.com/DjGhfkQpaZH7xHHWhLhjaj',
       youtube: 'https://youtube.com/@mrzfalcn?si=IQlfUB1BLc4ahTW2'
@@ -209,7 +210,7 @@ const PROFILES: Profile[] = [
     bio: 'Member',
     avatar: 'https://i.imgur.com/6DWe9yb.jpeg',
     links: { 
-      instagram: 'https://www.instagram.com/_mrz.dnl',
+      instagram: 'https://www.instagram.com/_mrz.dnl?igsh=MWZrazNmdWZ2M2Uzdg==',
       whatsapp: 'https://chat.whatsapp.com/L3V7rA58ptQ93sI3dQkmhw?mode=gi_t',
       youtube: 'https://youtube.com/@mrzdnl?si=Mm4YgJWGTlD8eftf'
     }
@@ -220,7 +221,7 @@ const PROFILES: Profile[] = [
     bio: 'Member',
     avatar: 'https://i.imgur.com/IyAt5JP.jpeg',
     links: { 
-      instagram: 'https://www.instagram.com/ambaan_proo',
+      instagram: 'https://www.instagram.com/ambaan_proo?igsh=NWx2dGwzYjBlbDBy',
       discord: 'https://discord.gg/EfTzpFnF8',
       whatsapp: 'https://chat.whatsapp.com/H9hmm5RZMMx9xA2X9BWj93',
       youtube: 'https://youtube.com/@mrzambaanpr00?si=DD1bzgf39bgIRLeh'
@@ -232,7 +233,7 @@ const PROFILES: Profile[] = [
     bio: 'Member',
     avatar: 'https://i.imgur.com/KsSuMm2.jpeg',
     links: { 
-      instagram: 'https://www.instagram.com/mrz_charan',
+      instagram: 'https://www.instagram.com/mrz_charan?igsh=MzdnMTd2aXJtdzRk',
       discord: 'https://discord.gg/9DaNP3Tu',
       whatsapp: 'https://chat.whatsapp.com/J5AgsfnfXpHG509LOOd6s0',
       youtube: 'https://youtube.com/@mrz_charan?si=NJnpo4ImbZ8vyT3M',
@@ -245,7 +246,7 @@ const PROFILES: Profile[] = [
     bio: 'Member',
     avatar: 'https://i.imgur.com/r0rEq0E.jpeg',
     links: { 
-      instagram: 'https://www.instagram.com/dios_the_god_',
+      instagram: 'https://www.instagram.com/dios_the_god_?igsh=OXlyZWp0YmtqdWVw',
       discord: 'https://discord.gg/ddnwDEEHT',
       whatsapp: 'https://chat.whatsapp.com/LHD8fxZ0hWHHNczacsyhuk',
       youtube: 'https://youtube.com/@mrzthegod?si=f5weon9DDtZu8RcM'
@@ -257,7 +258,7 @@ const PROFILES: Profile[] = [
     bio: 'Member',
     avatar: 'https://i.imgur.com/W194TQI.jpeg',
     links: { 
-      instagram: 'https://www.instagram.com/joshuafps',
+      instagram: 'https://www.instagram.com/joshuafps?igsh=ZzNnaHdpZDloMzVj',
       whatsapp: 'https://chat.whatsapp.com/LHD8fxZ0hWHHNczacsyhuk',
       discord: 'https://discord.gg/ddnwDEEHT',
       youtube: 'https://youtube.com/@mrzjoshua?si=jaa4SMyXJCgFanax',
@@ -270,7 +271,7 @@ const PROFILES: Profile[] = [
     bio: 'Member',
     avatar: 'https://i.imgur.com/pXKzYob.jpeg',
     links: { 
-      instagram: 'https://www.instagram.com/takai.mrz',
+      instagram: 'https://www.instagram.com/takai.mrz?igsh=MXJqZnNleGZjZDZ4Mg==',
       discord: 'https://discord.gg/Te2DVU7B6',
       whatsapp: 'https://chat.whatsapp.com/LXEuib90sb1HdN2RevZT5F?mode=gi_t',
       youtube: 'https://youtube.com/@mrztakai?si=aaIcx-ZFkRXrSqYv'
@@ -282,7 +283,7 @@ const PROFILES: Profile[] = [
     bio: 'Member',
     avatar: 'https://i.imgur.com/eRa53Qp.jpeg',
     links: { 
-      instagram: 'https://www.instagram.com/mrzsakai',
+      instagram: 'https://www.instagram.com/mrzsakai?igsh=MWpmcWoxeWRmY28xMQ==',
       discord: 'https://discord.gg/Te2DVU7B6',
       whatsapp: 'https://chat.whatsapp.com/LXEuib90sb1HdN2RevZT5F?mode=gi_t',
       youtube: 'https://youtube.com/@mrzsakaiii?si=wBc6IGY2b-Rt78Ug'
@@ -294,7 +295,7 @@ const PROFILES: Profile[] = [
     bio: 'Member',
     avatar: 'https://i.imgur.com/5eo1JgS.jpeg',
     links: { 
-      instagram: 'https://www.instagram.com/ig.speedo_',
+      instagram: 'https://www.instagram.com/ig.speedo_?igsh=aGQyenkxbnUyd2E3',
       discord: 'https://discord.gg/HNz5s2mBg',
       whatsapp: 'https://chat.whatsapp.com/KRHnOkPUG92DMiRQI9Solw?mode=gi_t',
       youtube: 'https://youtube.com/@speedo_fps?si=RWRC_24VxiOFCFHx'
@@ -306,7 +307,7 @@ const PROFILES: Profile[] = [
     bio: 'Member',
     avatar: 'https://i.imgur.com/5BnTIGz.jpeg',
     links: { 
-      instagram: 'https://www.instagram.com/mrz.ikruuuuh',
+      instagram: 'https://www.instagram.com/mrz.ikruuuuh?igsh=ZHQ5OGU4eGh3czMx',
       youtube: 'https://youtube.com/@ikruuuuh_mrz?si=40M0_9rvuSPHyiRq'
     }
   },
@@ -316,7 +317,7 @@ const PROFILES: Profile[] = [
     bio: 'Member',
     avatar: 'https://i.imgur.com/l14jzxt.jpeg',
     links: { 
-      instagram: 'https://www.instagram.com/mrz_pranav',
+      instagram: 'https://www.instagram.com/mrz_pranav?igsh=dzB6bGtldmtjMTF5',
       discord: 'https://discord.gg/EQRd769vC',
       whatsapp: 'https://chat.whatsapp.com/CjobfhXJVj1CY5nrwerVFs?mode=gi_t',
       youtube: 'https://youtube.com/@prnvv1hz?si=j4NJdAyXlF2Lj-7G'
@@ -328,7 +329,7 @@ const PROFILES: Profile[] = [
     bio: 'Member',
     avatar: 'https://i.imgur.com/rdVzGoL.jpeg',
     links: { 
-      instagram: 'https://www.instagram.com/vegetamyron_',
+      instagram: 'https://www.instagram.com/vegetamyron_?igsh=MWV6NHNnamtzbGhlaA==',
       discord: 'https://discord.gg/ddnwDEEHT',
       whatsapp: 'https://chat.whatsapp.com/LHD8fxZ0hWHHNczacsyhuk',
       youtube: 'https://youtube.com/@vegetagaming69696?si=iDBdUEdCV_rlyxiN'
@@ -340,7 +341,7 @@ const PROFILES: Profile[] = [
     bio: 'Member',
     avatar: 'https://i.imgur.com/CjsGhRK.png',
     links: { 
-      instagram: 'https://www.instagram.com/ig_kiduuuuu',
+      instagram: 'https://www.instagram.com/ig_kiduuuuu?igsh=MXR0eDUwcmF4d3k3YQ==',
       discord: 'https://discord.gg/mfpjYq62',
       whatsapp: 'https://chat.whatsapp.com/J5AgsfnfXpHG509LOOd6s0',
       youtube: 'https://youtube.com/@kiduuu.7tw?si=LJWlGtC1fvqW26Ue'
@@ -352,7 +353,7 @@ const PROFILES: Profile[] = [
     bio: 'Member',
     avatar: 'https://i.imgur.com/YWWZqIt.jpeg',
     links: { 
-      instagram: 'https://www.instagram.com/just_aimx',
+      instagram: 'https://www.instagram.com/just_aimx?igsh=bGJhejZqaHdsaGZ5',
       youtube: 'https://youtube.com/@aimxmalpro'
     }
   },
@@ -362,7 +363,7 @@ const PROFILES: Profile[] = [
     bio: 'Member',
     avatar: 'https://i.imgur.com/hXUznbP.jpeg',
     links: { 
-      instagram: 'https://www.instagram.com/og_mrz_jasi',
+      instagram: 'https://www.instagram.com/og_mrz_jasi?igsh=MW9nOGk1dnR4azRzNQ==',
       discord: 'https://discord.gg/fzyM8BgQZ',
       youtube: 'https://youtube.com/@jasivlogsgaming2937?si=6f8vmuc1YaEWGT6i'
     }
@@ -373,7 +374,7 @@ const PROFILES: Profile[] = [
     bio: 'Member',
     avatar: 'https://i.imgur.com/VmKmp0M.png',
     links: { 
-      instagram: 'https://www.instagram.com/mrz.jeje',
+      instagram: 'https://www.instagram.com/mrz.jeje?igsh=MjZqYzZtMDZ0cTI2',
       discord: 'https://discord.gg/p9TX2mQBs',
       whatsapp: 'https://chat.whatsapp.com/Le0a9g6zijZEmUCgh6VvcH?mode=gi_t',
       youtube: 'https://youtube.com/@mrz-jj?si=rBgL1ro-vq6cXeEy'
@@ -385,7 +386,7 @@ const PROFILES: Profile[] = [
     bio: 'Member',
     avatar: 'https://i.imgur.com/pZx3jkn.jpeg',
     links: { 
-      instagram: 'https://www.instagram.com/not_chxrlie.exe',
+      instagram: 'https://www.instagram.com/not_chxrlie.exe?igsh=MTN0NWJpOWQ0ZWV6Ng==',
       discord: 'https://discord.gg/cyA3m3Gc5w',
       youtube: 'https://youtube.com/@mrz.not_charlie?si=AgUVPh5qo4GBAurv'
     }
@@ -396,7 +397,7 @@ const PROFILES: Profile[] = [
     bio: 'Member',
     avatar: 'https://i.imgur.com/O8NIZHd.jpeg',
     links: { 
-      instagram: 'https://www.instagram.com/kareemeen_gwad._',
+      instagram: 'https://www.instagram.com/kareemeen_gwad._?igsh=MWNiNWlsdGFjcXpzcA==',
       discord: 'https://discord.gg/z85eStK38p',
       youtube: 'https://youtube.com/@kareemeengwad?si=rbQip6YQqonpxU-_'
     }
@@ -407,7 +408,7 @@ const PROFILES: Profile[] = [
     bio: 'Member',
     avatar: 'https://i.imgur.com/Wc3r6a8.jpeg',
     links: { 
-      instagram: 'https://www.instagram.com/ig.chapzgaming',
+      instagram: 'https://www.instagram.com/ig.chapzgaming?igsh=MWN6dmF3bG9kenhzcQ==',
       whatsapp: 'https://chat.whatsapp.com/HepTxr0wwocHZxQi0Kzpsp',
       youtube: 'https://youtube.com/@chapzg47?si=hdpbvCDAVh_JfFDB'
     }
@@ -418,7 +419,7 @@ const PROFILES: Profile[] = [
     bio: 'Member',
     avatar: 'https://i.imgur.com/RgKBr8k.jpeg',
     links: { 
-      instagram: 'https://www.instagram.com/mrz_rozario_',
+      instagram: 'https://www.instagram.com/mrz_rozario_?igsh=Zm96bmQ1YXFjaGhr',
       discord: 'https://discord.gg/8n6aj8GMf',
       whatsapp: 'https://chat.whatsapp.com/Bpe8dUHXNpBLFsrZsV6c4m',
       youtube: 'https://youtube.com/@mrz_rozario?si=E_L831Qh1YmW27Fm'
@@ -430,7 +431,7 @@ const PROFILES: Profile[] = [
     bio: 'Member',
     avatar: 'https://i.imgur.com/6wOIsMH.jpeg',
     links: { 
-      instagram: 'https://www.instagram.com/mrz_alan.exe',
+      instagram: 'https://www.instagram.com/mrz_alan.exe?igsh=bmxtbjNqazBwOTcz',
       discord: 'https://discord.gg/729N6SkqWY',
       youtube: 'https://youtube.com/@mrzalan_exe?si=2TIV5zQkq8frjdBv'
     }
@@ -441,7 +442,7 @@ const PROFILES: Profile[] = [
     bio: 'Member',
     avatar: 'https://i.imgur.com/1vpO12t.png',
     links: { 
-      instagram: 'https://www.instagram.com/bull.0p',
+      instagram: 'https://www.instagram.com/bull.0p?igsh=MWdzcjByYnJndTluMA==',
       discord: 'https://discord.gg/2WhJSSeRDA',
       whatsapp: 'https://chat.whatsapp.com/LFTppLhihpWFxlvLou6QxE?mode=gi_t',
       youtube: 'https://youtube.com/@bull-o-p?si=kGWJyheYwHuc8RJR'
@@ -453,7 +454,7 @@ const PROFILES: Profile[] = [
     bio: 'Member',
     avatar: 'https://i.imgur.com/dHFKHJr.jpeg',
     links: { 
-      instagram: 'https://www.instagram.com/_mrz_usman_',
+      instagram: 'https://www.instagram.com/_mrz_usman_?igsh=MW44dnNvcHJwcHYydA==',
       discord: 'https://discord.gg/QxQw9n6UN',
       youtube: 'https://youtube.com/@usman999w?si=j_ZSVbAQ43IZi8L-'
     }
@@ -464,7 +465,7 @@ const PROFILES: Profile[] = [
     bio: 'Member',
     avatar: 'https://i.imgur.com/7w67amc.jpeg',
     links: { 
-      instagram: 'https://www.instagram.com/mrz_blake',
+      instagram: 'https://www.instagram.com/mrz_blake?igsh=YmxwbnZzemxhMXpy',
       discord: 'https://discord.gg/D3yXhhXh',
       whatsapp: 'https://chat.whatsapp.com/CnHBbM7kJLTJlAY4nXNFRB',
       youtube: 'https://youtube.com/@mrz_blake?si=rXSr4nPBAqjKhIwE'
@@ -476,7 +477,7 @@ const PROFILES: Profile[] = [
     bio: 'Member',
     avatar: 'https://i.imgur.com/7vmWKHA.jpeg',
     links: { 
-      instagram: 'https://www.instagram.com/mrz_ismailw',
+      instagram: 'https://www.instagram.com/mrz_ismailw?igsh=dWlvNjRxY2xmcms0',
       discord: 'https://discord.gg/NjKYKu3Ke',
       whatsapp: 'https://chat.whatsapp.com/JkeifOoRM3E0apqsJyzh7w?mode=gi_t',
       youtube: 'https://youtube.com/@ismailrpw?si=SPT9mrg7EBUzZM1d'
@@ -488,9 +489,9 @@ const PROFILES: Profile[] = [
     bio: 'Member',
     avatar: 'https://i.imgur.com/0Lxu5sU.png',
     links: { 
-      instagram: 'https://www.instagram.com/userdead.luvv',
+      instagram: 'https://www.instagram.com/userdead.luvv?igsh=djZ3cHZndW9namxt',
       youtube: 'https://youtube.com/@real.minnal-y4h?si=D9XHSCz6_6QWVJ-3'
-    }instagram: 'https://www.instagram.com/mrz_blake',instagram: 'https://www.instagram.com/mrz_blake',
+    }
   },
   {
     id: '41',
@@ -510,7 +511,7 @@ const PROFILES: Profile[] = [
     bio: 'Member',
     avatar: 'https://i.imgur.com/3UXbgU1.jpeg',
     links: { 
-      instagram: 'https://www.instagram.com/mrzbobby',
+      instagram: 'https://www.instagram.com/mrzbobby?igsh=YXFrcHF4cGd3YXRk',
       discord: 'https://discord.gg/kxjH3RBprB',
       whatsapp: 'https://chat.whatsapp.com/CzjZywI7pPW8AIp2KI5UfL',
       youtube: 'https://youtube.com/@mrzbobby?si=q4kEVSaBYt-io60s'
@@ -522,7 +523,7 @@ const PROFILES: Profile[] = [
     bio: 'Member',
     avatar: 'https://i.imgur.com/IFwg1q6.jpeg',
     links: { 
-      instagram: 'https://www.instagram.com/mrz_ry4n',
+      instagram: 'https://www.instagram.com/mrz_ry4n?igsh=MXNta2ZlYmMza3V2Nw==',
       youtube: 'https://youtube.com/@mrz_ryan?si=p6wA6feIuliRMiMn'
     }
   },
@@ -532,7 +533,7 @@ const PROFILES: Profile[] = [
     bio: 'Member',
     avatar: 'https://i.imgur.com/KHZiBfd.jpeg',
     links: { 
-      instagram: 'https://www.instagram.com/_mrz_cooper',
+      instagram: 'https://www.instagram.com/_mrz_cooper?igsh=bDR3aHdhczcyN3Fy',
       youtube: 'https://youtube.com/@coooper_op?si=4-7vQQW1iw95AOqA'
     }
   }
@@ -812,8 +813,8 @@ export default function App() {
         `> **Integrity**: Config & Profiles verified\n\n` +
         `#### 📝 Site Activity Logs\n` +
         `*   **Commands**: \`SYSTEM_CHECK\`, \`HEARTBEAT_SYNC\`\n` +
-        `*   **Card Actions**: \`UPDATED\` (MRZ Zendnex Duvor avatar updated)\n` +
-        `*   **Site Updates**: \`v1.7.3_EXPANSION\` (Zendnex Duvor visual asset updated)\n\n` +
+        `*   **Card Actions**: \`UPDATED\` (MRZ Alex Duvor Kick live stream integrated)\n` +
+        `*   **Site Updates**: \`v1.7.4_EXPANSION\` (Alex Duvor Kick sync active)\n\n` +
         `#### 🐛 Debugging Intelligence\n` +
         `*   **Bugs Found**: \`0\` (Scan clean)\n` +
         `*   **Bugs Fixed**: \`9\` (All known issues patched)\n` +
