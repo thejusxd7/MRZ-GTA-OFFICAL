@@ -144,7 +144,7 @@ const PROFILES: Profile[] = [
   },
   {
     id: '43',
-    name: 'MRZ CK Mari',
+    name: 'MRZ CK Maari',
     bio: 'Member',
     avatar: 'https://i.imgur.com/ofEBomu.jpeg',
     links: { 
@@ -372,7 +372,7 @@ const PROFILES: Profile[] = [
     id: '30',
     name: 'MRZ JJ',
     bio: 'Member',
-    avatar: 'https://i.imgur.com/VmKmp0M.png',
+    avatar: 'https://i.imgur.com/oK0b8PG.jpeg',
     links: { 
       instagram: 'https://www.instagram.com/mrz.jeje?igsh=MjZqYzZtMDZ0cTI2',
       discord: 'https://discord.gg/p9TX2mQBs',
