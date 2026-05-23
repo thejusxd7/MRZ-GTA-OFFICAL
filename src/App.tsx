@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { motion } from 'motion/react';
+import { motion, AnimatePresence } from 'motion/react';
 import { 
   Instagram, 
   MessageCircle, 
@@ -144,7 +144,7 @@ const PROFILES: Profile[] = [
   },
   {
     id: '43',
-    name: 'MRZ CK Maari',
+    name: 'MRZ CK Mari',
     bio: 'Member',
     avatar: 'https://i.imgur.com/ofEBomu.jpeg',
     links: { 
@@ -372,7 +372,7 @@ const PROFILES: Profile[] = [
     id: '30',
     name: 'MRZ JJ',
     bio: 'Member',
-    avatar: 'https://i.imgur.com/oK0b8PG.jpeg',
+    avatar: 'https://i.imgur.com/VmKmp0M.png',
     links: { 
       instagram: 'https://www.instagram.com/mrz.jeje?igsh=MjZqYzZtMDZ0cTI2',
       discord: 'https://discord.gg/p9TX2mQBs',
@@ -726,9 +726,138 @@ const BackgroundDecorations = () => {
   );
 };
 
+interface CreditsModalProps {
+  isOpen: boolean;
+  onClose: () => void;
+}
+
+const CreditsModal: React.FC<CreditsModalProps> = ({ isOpen, onClose }) => {
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isOpen]);
+
+  return (
+    <AnimatePresence>
+      {isOpen && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+          {/* Overlay */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={onClose}
+            className="absolute inset-0 bg-black/80 backdrop-blur-md"
+          />
+
+          {/* Modal Content */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95, y: 20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.95, y: 20 }}
+            transition={{ type: "spring", duration: 0.5, bounce: 0.2 }}
+            className="relative w-full max-w-sm overflow-hidden rounded-[2.5rem] border border-amber-400/25 bg-neutral-950/90 p-8 shadow-[0_0_50px_rgba(251,191,36,0.15)] backdrop-blur-xl z-10"
+          >
+            {/* Background elements inside modal */}
+            <div className="absolute -top-12 -right-12 w-32 h-32 bg-amber-400/10 blur-[30px] rounded-full" />
+            <div className="absolute -bottom-12 -left-12 w-32 h-32 bg-amber-600/5 blur-[30px] rounded-full" />
+
+            {/* Header */}
+            <div className="flex items-center justify-between mb-6 relative z-10">
+              <h3 className="text-2xl font-bold tracking-wider text-amber-400 uppercase font-mono amber-text-glow">
+                Credits
+              </h3>
+              <button
+                onClick={onClose}
+                className="rounded-full bg-amber-400/5 p-2 text-amber-400/70 hover:bg-amber-400/15 hover:text-amber-400 transition-colors border border-amber-400/10 hover:border-amber-400/20 cursor-pointer"
+              >
+                <X size={18} />
+              </button>
+            </div>
+
+            {/* Content List */}
+            <div className="space-y-4 font-sans relative z-10">
+              {/* Developed By */}
+              <div className="p-4 rounded-2xl bg-amber-400/5 border border-amber-400/10 hover:border-amber-400/20 transition-all duration-300">
+                <span className="block text-xs font-mono tracking-widest text-amber-400/60 uppercase mb-1">
+                  Developed By
+                </span>
+                <a
+                  href="https://instagram.com/arkeeyyyy"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => playTapSound()}
+                  className="text-lg font-semibold text-amber-100 hover:text-amber-400 transition-colors duration-300 cursor-pointer inline-block"
+                >
+                  Ark Graphics
+                </a>
+              </div>
+
+              {/* Concept */}
+              <div className="p-4 rounded-2xl bg-amber-400/5 border border-amber-400/10 hover:border-amber-400/20 transition-all duration-300">
+                <span className="block text-xs font-mono tracking-widest text-amber-400/60 uppercase mb-1">
+                  Concept
+                </span>
+                <span className="text-base font-medium text-amber-100">
+                  <a
+                    href="https://instagram.com/arkeeyyyy"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => playTapSound()}
+                    className="hover:text-amber-400 transition-colors duration-300 cursor-pointer inline-block"
+                  >
+                    Ark
+                  </a>
+                  {" , "}
+                  <a
+                    href="https://www.instagram.com/smoky_d_brook"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => playTapSound()}
+                    className="hover:text-amber-400 transition-colors duration-300 cursor-pointer inline-block"
+                  >
+                    Smoky D Brook
+                  </a>
+                </span>
+              </div>
+
+              {/* Helpers */}
+              <div className="p-4 rounded-2xl bg-amber-400/5 border border-amber-400/10 hover:border-amber-400/20 transition-all duration-300">
+                <span className="block text-xs font-mono tracking-widest text-amber-400/60 uppercase mb-1">
+                  Helpers
+                </span>
+                <span className="text-base font-medium text-amber-100">
+                  Nagi , Niko
+                </span>
+              </div>
+
+              {/* Supporters */}
+              <div className="p-4 rounded-2xl bg-amber-400/5 border border-amber-400/10 hover:border-amber-400/20 transition-all duration-300">
+                <span className="block text-xs font-mono tracking-widest text-amber-400/60 uppercase mb-1">
+                  Supporters
+                </span>
+                <span className="text-sm font-medium text-amber-100/90 leading-relaxed block">
+                  MysticOP , Zpyd , Nijaz , Funlife69
+                </span>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      )}
+    </AnimatePresence>
+  );
+};
+
 export default function App() {
   const [searchQuery, setSearchQuery] = useState('');
   const [isCopied, setIsCopied] = useState(false);
+  const [showCreditsModal, setShowCreditsModal] = useState(false);
   const deferredSearchQuery = React.useDeferredValue(searchQuery);
 
   const handleShare = async () => {
@@ -813,8 +942,8 @@ export default function App() {
         `> **Integrity**: Config & Profiles verified\n\n` +
         `#### 📝 Site Activity Logs\n` +
         `*   **Commands**: \`SYSTEM_CHECK\`, \`HEARTBEAT_SYNC\`\n` +
-        `*   **Card Actions**: \`UPDATED\` (MRZ Alex Duvor Kick live stream integrated)\n` +
-        `*   **Site Updates**: \`v1.7.4_EXPANSION\` (Alex Duvor Kick sync active)\n\n` +
+        `*   **Card Actions**: \`UPDATED\` (Credits popup instagram links integrated)\n` +
+        `*   **Site Updates**: \`v1.7.7_EXPANSION\` (Interactive redirects patched inside credits modal)\n\n` +
         `#### 🐛 Debugging Intelligence\n` +
         `*   **Bugs Found**: \`0\` (Scan clean)\n` +
         `*   **Bugs Fixed**: \`9\` (All known issues patched)\n` +
@@ -1016,9 +1145,21 @@ export default function App() {
             <p className="text-amber-100/20 text-sm tracking-widest uppercase">
               &copy; MRZ Offical 2026 &bull; All Rights Reserved 
             </p>
+            <button 
+              onClick={() => {
+                playTapSound();
+                setShowCreditsModal(true);
+              }}
+              className="text-amber-400 font-mono text-xs tracking-widest uppercase mt-3 cursor-pointer transition-all duration-300 px-4 py-1.5 rounded-full bg-amber-400/5 hover:bg-amber-400/10 border border-amber-400/15 hover:border-amber-400/35 hover:scale-105 active:scale-95 shadow-[0_0_10px_rgba(251,191,36,0.05)] hover:shadow-[0_0_20px_rgba(251,191,36,0.15)] outline-none"
+            >
+              Credits
+            </button>
           </motion.div>
         </footer>
       </div>
+
+      {/* Credits Popup Modal */}
+      <CreditsModal isOpen={showCreditsModal} onClose={() => { playTapSound(); setShowCreditsModal(false); }} />
     </main>
   );
 }
