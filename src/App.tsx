@@ -812,7 +812,7 @@ const CreditsModal: React.FC<CreditsModalProps> = ({ isOpen, onClose }) => {
                     onClick={() => playTapSound()}
                     className="hover:text-amber-400 transition-colors duration-300 cursor-pointer inline-block"
                   >
-                    Ark
+                    ARK
                   </a>
                   {" , "}
                   <a
@@ -822,7 +822,7 @@ const CreditsModal: React.FC<CreditsModalProps> = ({ isOpen, onClose }) => {
                     onClick={() => playTapSound()}
                     className="hover:text-amber-400 transition-colors duration-300 cursor-pointer inline-block"
                   >
-                    Smoky D Brook
+                    SMOKY-D-BROOK
                   </a>
                 </span>
               </div>
@@ -843,7 +843,18 @@ const CreditsModal: React.FC<CreditsModalProps> = ({ isOpen, onClose }) => {
                   Supporters
                 </span>
                 <span className="text-sm font-medium text-amber-100/90 leading-relaxed block">
-                  MysticOP , Zpyd , Nijaz , Funlife69
+                  MysticOP , Zpyd ,{" "}
+                  <a
+                    href="https://www.instagram.com/nz.nijazz"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => playTapSound()}
+                    className="hover:text-amber-400 transition-colors duration-300 cursor-pointer inline-block underline decoration-amber-400/20"
+                  >
+                    NJ.Nijaz
+                  </a>
+                  {" , "}
+                  Funlife69
                 </span>
               </div>
             </div>
@@ -942,8 +953,8 @@ export default function App() {
         `> **Integrity**: Config & Profiles verified\n\n` +
         `#### 📝 Site Activity Logs\n` +
         `*   **Commands**: \`SYSTEM_CHECK\`, \`HEARTBEAT_SYNC\`\n` +
-        `*   **Card Actions**: \`UPDATED\` (Credits popup instagram links integrated)\n` +
-        `*   **Site Updates**: \`v1.7.7_EXPANSION\` (Interactive redirects patched inside credits modal)\n\n` +
+        `*   **Card Actions**: \`UPDATED\` (Concept lettering upgraded & NJ.Nijaz profile synced)\n` +
+        `*   **Site Updates**: \`v1.7.8_EXPANSION\` (Dynamic Instagram redirection & metadata patch active)\n\n` +
         `#### 🐛 Debugging Intelligence\n` +
         `*   **Bugs Found**: \`0\` (Scan clean)\n` +
         `*   **Bugs Fixed**: \`9\` (All known issues patched)\n` +
