@@ -851,7 +851,7 @@ const CreditsModal: React.FC<CreditsModalProps> = ({ isOpen, onClose }) => {
                     onClick={() => playTapSound()}
                     className="hover:text-amber-400 transition-colors duration-300 cursor-pointer inline-block underline decoration-amber-400/20"
                   >
-                    NJ.Nijaz
+                    NZ.nijaz
                   </a>
                   {" , "}
                   Funlife69
@@ -953,8 +953,8 @@ export default function App() {
         `> **Integrity**: Config & Profiles verified\n\n` +
         `#### 📝 Site Activity Logs\n` +
         `*   **Commands**: \`SYSTEM_CHECK\`, \`HEARTBEAT_SYNC\`\n` +
-        `*   **Card Actions**: \`UPDATED\` (Concept lettering upgraded & NJ.Nijaz profile synced)\n` +
-        `*   **Site Updates**: \`v1.7.8_EXPANSION\` (Dynamic Instagram redirection & metadata patch active)\n\n` +
+        `*   **Card Actions**: \`UPDATED\` (Concept lettering upgraded & NZ.nijaz profile synced)\n` +
+        `*   **Site Updates**: \`v1.7.9_EXPANSION\` (Dynamic Instagram redirection & metadata patch active)\n\n` +
         `#### 🐛 Debugging Intelligence\n` +
         `*   **Bugs Found**: \`0\` (Scan clean)\n` +
         `*   **Bugs Fixed**: \`9\` (All known issues patched)\n` +
